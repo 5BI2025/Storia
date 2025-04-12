@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentazione Storia - 5Bi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --electric-blue: #00a8ff;
+            --neon-pink: #ff2d75;
+            --acid-green: #a3ff47;
+            --dark-bg: #121212;
+            --glow: 0 0 15px currentColor;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .presentation-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0;
+            perspective: 1000px;
+        }
+
+        /* Header stile "spotlight" */
+        .presentation-header {
+            background: linear-gradient(45deg, #0f0c29, #302b63);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+            transform-style: preserve-3d;
+        }
+
+        .presentation-header::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 50px;
+            background: radial-gradient(ellipse at center, rgba(0,168,255,0.5) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .presentation-header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            margin: 0;
+            background: linear-gradient(to right, var(--electric-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: textGlow 2s infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--acid-green);
+            margin-top: 10px;
+            text-shadow: var(--glow);
+        }
+
+        /* Indice stile "holographic" */
+        .index-container {
+            padding: 0 40px 60px;
+        }
+
+        .index-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--electric-blue);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .index-title::before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--neon-pink));
+        }
+
+        .index-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 0;
+        }
+
+        .index-list li {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .index-list li a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+        .index-list li:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,168,255,0.3);
+            border-color: var(--electric-blue);
+            cursor: pointer;
+        }
+
+        .index-list li:hover strong {
+            color: var(--neon-pink);
+        }
+
+        .index-list li::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent 0%,
+                rgba(0,168,255,0.1) 50%,
+                transparent 100%
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+
+        .index-list li strong {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--acid-green);
+            transition: color 0.3s ease;
+        }
+
+        .index-list li .emoji {
+            font-size: 2rem;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 5px currentColor);
+        }
+
+        /* Footer stile "cyber" */
+        .presentation-footer {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(to right, #0f0c29, #302b63);
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+            margin-top: 80px;
+        }
+
+        .presentation-footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .presentation-footer a {
+            color: var(--acid-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Animazioni */
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 10px rgba(0,168,255,0.5); }
+            100% { text-shadow: 0 0 20px rgba(255,45,117,0.7); }
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-10%, -10%); }
+            100% { transform: rotate(30deg) translate(10%, 10%); }
+        }
+
+        /* Effetti responsive */
+        @media (max-width: 768px) {
+            .presentation-header h1 {
+                font-size: 2.5rem;
+            }
+            .index-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <header class="presentation-header">
+            <h1>Terzo mondo e decolonizzazione</h1>
+            <p class="subtitle">Liberi dal colonialismo, ma ancora prigionieri della loro storia.</p>
+        </header>
+
+        <main class="index-container">
+            <h2 class="index-title">Cosa troverai</h2>
+            <ol class="index-list">
+                <li onclick="location.href='decolonizzazione_asia.html'">
+                    <a href="decolonizzazione_asia.html">
+                        <strong>La decolonizzazione in Asia</strong>
+                        Dall'Indocina francese alle indipendenze: il tramonto degli imperi
+                        <span class="emoji">💣</span>
+                    </a>
+                </li>
+                <li onclick="location.href='cina.html'">
+                    <a href="cina.html">
+                        <strong>Republica popolare cinese</strong>
+                        Dalla lunga marcia al potere di Mao: la nascita della Cina moderna
+                        <span class="emoji">🔥</span>
+                    </a>
+                </li>
+                <li onclick="location.href='comunismo.html'">
+                    <a href="comunismo.html">
+                        <strong>Rivoluzioni + comunismo</strong>
+                        Dove crollano i troni, nascono le bandiere rosse.                    
+                        <span class="emoji">☭</span>
+                    </a>
+                </li>
+                <li onclick="location.href='anti_imperialismo.html'">
+                    <a href="anti_imperialismo.html">
+                        <strong>Rivoluzioni Anti-imperialiste</strong>
+                        Dagli schiavi ai ribelli: il riscatto di chi disse no ai padroni.
+                        <span class="emoji">🔫</span>
+                    </a>
+                </li>
+                <li onclick="location.href='cuba.html'">
+                    <a href="cuba.html">
+                        <strong>Rivoluzione Cubana</strong>
+                        hasta la victoria siempre
+                        <span class="emoji">✊</span>
+                    </a>
+                </li>
+                <li onclick="location.href='israele.html'">
+                    <a href="israele.html">
+                        <strong>Israele</strong>
+                        עם ישראל חי - il popolo d'israele vive
+                        <span class="emoji">✡︎𓂆</span>
+                    </a>
+                </li>
+            </ol>
+        </main>
+
+        <footer class="presentation-footer">
+            <p>Presentazione realizzata da <a href="#">Chiarilli & Farfarelli</a> | Classe 5°BI - 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

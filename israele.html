@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Israele - Storia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --electric-blue: #00a8ff;
+      --neon-pink: #ff2d75;
+      --acid-green: #a3ff47;
+      --dark-bg: #121212;
+      --israel-blue: #0038b8;
+      --israel-white: #ffffff;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--dark-bg);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .presentation-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0;
+    }
+
+    .presentation-header {
+      background: var(--israel-blue);
+      padding: 40px 30px 20px;
+      text-align: center;
+      position: relative;
+      border-bottom: 4px solid var(--israel-white);
+    }
+
+    .presentation-header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4.5rem;
+      margin: 0;
+      color: var(--israel-white);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .flag {
+      margin: 15px 0;
+    }
+
+    .flag img {
+      width: 100px;
+      height: auto;
+      border: 2px solid var(--israel-white);
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--acid-green);
+      margin-top: 10px;
+      text-shadow: 0 0 10px var(--acid-green);
+    }
+
+    .content-container {
+      padding: 0 40px 60px;
+    }
+
+    .content-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--electric-blue);
+      margin: 50px 0 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .content-title::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--electric-blue), var(--neon-pink));
+    }
+
+    .paragraph-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 25px 30px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .date {
+      font-weight: 600;
+      color: var(--acid-green);
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+
+    .paragraph-card h3 {
+      margin-top: 5px;
+      font-size: 1.5rem;
+      color: var(--israel-white);
+    }
+
+    .paragraph-card p {
+      margin: 12px 0 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .presentation-footer {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(to right, #0038b8, #002a8c);
+      margin-top: 80px;
+    }
+
+    .presentation-footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .presentation-footer a {
+      color: var(--acid-green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .home-button {
+      background-color: var(--electric-blue);
+      color: var(--israel-white);
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: var(--neon-pink);
+      transform: translateY(-5px);
+    }
+
+    /* Centrare il bottone */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="presentation-container">
+    <header class="presentation-header">
+      <h1>ISRAELE</h1>
+      <div class="flag">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg" alt="Bandiera di Israele">
+      </div>
+      <p class="subtitle">עם ישראל חי — Il popolo vive</p>
+    </header>
+
+    <main class="content-container">
+      <h2 class="content-title">Storia di Israele</h2>
+
+      <div class="paragraph-card">
+        <div class="date">1897 ✡️</div>
+        <h3>Primo Congresso Sionista</h3>
+        <p>Theodor Herzl organizza il congresso a Basilea, gettando le basi per uno Stato ebraico. Nasce il movimento sionista moderno.</p>
+      </div>
+
+      <div class="paragraph-card">
+        <div class="date">1917 📜</div>
+        <h3>Dichiarazione Balfour</h3>
+        <p>Il governo britannico si impegna a sostenere la creazione di un "focolare nazionale" ebraico in Palestina.</p>
+      </div>
+
+      <div class="paragraph-card">
+        <div class="date">1947 🕊️</div>
+        <h3>Piano di Partizione ONU</h3>
+        <p>L'ONU approva la risoluzione 181 che divide la Palestina in uno Stato ebraico e uno arabo, con Gerusalemme sotto controllo internazionale.</p>
+      </div>
+
+      <div class="paragraph-card">
+        <div class="date">14 Maggio 1948 🎉</div>
+        <h3>Nascita dello Stato</h3>
+        <p>David Ben-Gurion proclama l'indipendenza di Israele. Scatta immediatamente l'attacco degli Stati arabi confinanti.</p>
+      </div>
+
+      <div class="paragraph-card">
+        <div class="date">1967 ⚔️</div>
+        <h3>Guerra dei Sei Giorni</h3>
+        <p>Israele conquista Gerusalemme Est, Cisgiordania, Gaza, Sinai e Golan in una guerra lampo contro Egitto, Siria e Giordania.</p>
+      </div>
+
+      <div class="paragraph-card">
+        <div class="date">1973 🔥</div>
+        <h3>Guerra del Kippur</h3>
+        <p>Attacco a sorpresa di Egitto e Siria durante la festività ebraica. Pesanti perdite israeliane ma vittoria finale.</p>
+      </div>
+
+      <div class="paragraph-card">
+        <div class="date">1979 🤝</div>
+        <h3>Accordi di Camp David</h3>
+        <p>Primo trattato di pace tra Israele e un paese arabo (Egitto). Menachem Begin e Anwar Sadat vincono il Nobel per la pace.</p>
+      </div>
+
+      <div class="paragraph-card">
+        <div class="date">1993 ✌️</div>
+        <h3>Accordi di Oslo</h3>
+        <p>Israele e OLP si riconoscono reciprocamente. Creazione dell'Autorità Palestinese per governare parti dei Territori Occupati.</p>
+      </div>
+
+      <!-- Bottone centrato -->
+      <div class="button-container">
+        <button class="home-button" onclick="window.location.href = 'index.html';">Torna alla Home</button>
+      </div>
+
+    </main>
+
+    <footer class="presentation-footer">
+      <p>Presentazione realizzata da <a href="#">Chiarilli & Farfarelli</a> | Classe 5°BI - 2025</p>
+    </footer>
+  </div>
+</body>
+</html>
