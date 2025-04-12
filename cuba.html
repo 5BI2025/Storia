@@ -160,6 +160,40 @@
       align-items: center;
       margin-top: 40px;
     }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      width: 50%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .image-container img {
+        width: 100%;
+      }
+    }
+
+    .highlight {
+      color: var(--acid-green);
+      font-weight: 600;
+    }
+
+    .quote {
+      font-style: italic;
+      border-left: 3px solid var(--neon-pink);
+      padding-left: 15px;
+      margin: 20px 0;
+      color: rgba(255,255,255,0.9);
+    }
   </style>
 </head>
 <body>
@@ -173,62 +207,36 @@
     </header>
 
     <main class="content-container">
-      <h2 class="content-title">La Storia della Rivoluzione Cubana</h2>
+      <h2 class="content-title">La Rivoluzione Cubana e Che Guevara</h2>
 
       <div class="paragraph-card">
-        <div class="date">1953 ⚔️</div>
-        <h3>Attacco alla Caserma Moncada</h3>
-        <p>Fidel Castro e il suo gruppo di rivoluzionari attaccano la caserma Moncada a Santiago de Cuba, ma l'operazione fallisce. Castro viene arrestato.</p>
+        <div class="date">1953-1959 ⚔️</div>
+        <h3>Dalla ribellione al trionfo rivoluzionario</h3>
+        <p>A Cuba, l'opposizione al regime autoritario di <span class="highlight">Fulgencio Batista</span> si coagulò attorno a <span class="highlight">Fidel Castro</span> e al medico argentino <span class="highlight">Ernesto "Che" Guevara</span>. Dopo un iniziale fallimento (assalto alla caserma Moncada, 1953), i rivoluzionari ottennero un crescente sostegno popolare, soprattutto tra i contadini e i giovani. Nel 1959, Castro entrò vittorioso all'Avana e Batista fuggì all'estero.</p>
+        
+        <div class="image-container">
+          <img src="Che guevara.jpeg" alt="Che Guevara">
+        </div>
+        
+        <p>Inizialmente, il nuovo governo non si dichiarò socialista, e persino gli <span class="highlight">Stati Uniti</span> riconobbero il regime. Tuttavia, ben presto Castro avviò una nazionalizzazione delle industrie e delle terre, colpendo soprattutto le multinazionali americane. Gli USA risposero con un <span class="highlight">embargo economico</span>, spingendo Cuba verso un'alleanza con l'<span class="highlight">URSS</span>.</p>
+        
+        <p>Nel <span class="highlight">1961</span>, gli Stati Uniti tentarono di rovesciare Castro con l'invasione della <span class="highlight">Baia dei Porci</span>, realizzata da esuli cubani addestrati dalla CIA, ma l'operazione fallì. L'anno seguente, la <span class="highlight">Crisi dei missili (1962)</span> portò il mondo sull'orlo della guerra nucleare: l'URSS installò missili nucleari a Cuba e gli USA reagirono con un blocco navale. Alla fine, Kruscev accettò il ritiro dei missili in cambio dell'impegno americano a non invadere Cuba.</p>
+        
+        <div class="quote">
+          "Creare uno, due, tre, molti Vietnam"<br>
+          - Che Guevara
+        </div>
+        
+        <p><span class="highlight">Che Guevara</span>, dopo la rivoluzione, divenne ministro dell'economia e ideologo della rivoluzione permanente. Era convinto che la guerriglia fosse lo strumento principale della rivoluzione, basata sul sostegno popolare, più che su una rigida struttura partitica.</p>
+        
+        <p>Lasciò Cuba nel <span class="highlight">1965</span> per esportare la rivoluzione in Africa e America Latina, ma fu catturato e ucciso in <span class="highlight">Bolivia nel 1967</span>, tradito proprio dai contadini che voleva liberare. La sua figura rimane ancora oggi un simbolo globale della lotta rivoluzionaria.</p>
       </div>
-
-      <div class="paragraph-card">
-        <div class="date">1955 🎉</div>
-        <h3>Rilascio e Esilio</h3>
-        <p>Fidel Castro, rilasciato dopo due anni di prigione, si rifugia in Messico dove organizza la rivoluzione con il supporto di Che Guevara.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">1956 🛶</div>
-        <h3>Il Granma</h3>
-        <p>Il 2 dicembre 1956, Castro e il suo gruppo partono dal Messico a bordo della nave Granma per sbarcare a Cuba e iniziare la guerriglia contro il regime di Batista.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">1958 🔥</div>
-        <h3>La Guerriglia di Sierra Maestra</h3>
-        <p>La guerriglia guidata da Castro e Guevara nella Sierra Maestra guadagna sempre più consensi, sconfiggendo le forze di Batista e guadagnando il supporto delle masse popolari.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">1959 🕊️</div>
-        <h3>La Vittoria della Rivoluzione</h3>
-        <p>Il 1 gennaio 1959, Fulgencio Batista fugge da Cuba e Fidel Castro entra trionfante a L'Avana, segnando la vittoria della rivoluzione cubana.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">1961 💥</div>
-        <h3>Invasione della Baia dei Porci</h3>
-        <p>Un fallito tentativo di invasione da parte di esuli cubani sostenuti dagli Stati Uniti cerca di rovesciare il regime cubano, ma viene sconfitto dalle forze di Castro.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">1962 🔒</div>
-        <h3>Crisis dei Missili di Cuba</h3>
-        <p>Il mondo è sull'orlo della guerra nucleare durante la crisi dei missili di Cuba, quando l'URSS colloca missili nucleari sull'isola, portando a un conflitto con gli Stati Uniti.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">1975 ✌️</div>
-        <h3>Cuba nel Terzo Mondo</h3>
-        <p>Cuba diventa un attore principale nella politica mondiale, sostenendo movimenti di liberazione in Africa e continuando il suo sviluppo sotto il socialismo.</p>
-      </div>
-
-      <!-- Bottone centrato -->
-      <div class="button-container">
-        <button class="home-button" onclick="window.location.href = 'index.html';">Torna alla Home</button>
-      </div>
-
     </main>
+
+     <!-- Bottone centrato -->
+     <div class="button-container">
+      <button class="home-button" onclick="window.location.href = 'index.html';">Torna alla Home</button>
+    </div>
 
     <footer class="presentation-footer">
       <p>Presentazione realizzata da <a href="#">Chiarilli & Farfarelli</a> | Classe 5°BI - 2025</p>

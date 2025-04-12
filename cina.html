@@ -160,6 +160,29 @@
       align-items: center;
       margin-top: 40px;
     }
+
+     /* Centrare l'immagine e renderla responsiva */
+     .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;  /* Distanza tra il testo e l'immagine */
+    }
+
+    .image-container img {
+      max-width: 100%;  /* Assicurati che l'immagine non superi la larghezza del contenitore */
+      height: 50%;     /* Mantieni le proporzioni originali dell'immagine */
+      width: 50%;       /* L'immagine avrà una larghezza massima del 80% del contenitore */
+      border-radius: 10px; /* Bordo arrotondato per un effetto più elegante */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Leggera ombra per dare profondità */
+    }
+
+    /* Regole aggiuntive per schermi piccoli */
+    @media (max-width: 768px) {
+      .image-container img {
+        width: 100%;  /* Su schermi piccoli l'immagine prende tutta la larghezza disponibile */
+      }
+    }
   </style>
 </head>
 <body>
@@ -176,65 +199,26 @@
       <h2 class="content-title">La Storia della Repubblica Popolare Cinese</h2>
 
       <div class="paragraph-card">
-        <div class="date">1911 🥂</div>
-        <h3>Rivoluzione Xinhai</h3>
-        <p>La Rivoluzione Xinhai rovescia la dinastia Qing, segnando la fine del sistema imperiale e l'inizio della Repubblica di Cina.</p>
-      </div>
+        <div class="date">1949 🥂</div>
+        <h3>Repubblica, Guerra civile e Rivoluzione Cinese</h3>
+        <p>Dopo la fine della Seconda guerra mondiale, la Cina era divisa tra due fazioni: i comunisti, guidati da Mao Zedong, e i nazionalisti del Kuomintang, capeggiati da Chiang Kai-shek. La guerra civile, durata dal 1946 al 1949, si concluse con la vittoria dei comunisti, che fondarono la Repubblica Popolare Cinese il 1° ottobre 1949. I nazionalisti si rifugiarono sull'isola di Taiwan, dove istituirono un governo autonomo, rifiutando di riconoscere la Repubblica Popolare.
+            Mao poté contare sull'ampio sostegno dei contadini, che appoggiavano la redistribuzione della terra, e su un'importante alleanza con l'Unione Sovietica, che fornì aiuti economici e modelli di industrializzazione. In questa fase iniziale, Mao avviò una riforma agraria, espropriando i latifondi e ridistribuendo le terre ai contadini, e lanciò i piani quinquennali, ispirati al modello sovietico, per promuovere l'industrializzazione forzata. Tuttavia, la Cina rimase in gran parte un Paese rurale e sottosviluppato.
+            Nel 1956, emersero tensioni tra Cina e URSS quando Mao propose la parità tra le nazioni comuniste, contrastando la leadership sovietica. Nello stesso periodo, Mao avviò la campagna dei "cento fiori" (1956-1957), un'iniziativa per incoraggiare la libertà di espressione e il pensiero critico. Tuttavia, di fronte alle critiche che esplosero, il regime reagì con una repressione violenta, arrestando dissidenti e rafforzando la dittatura.
+            Nel 1958 Mao lanciò il "Grande balzo in avanti", un ambizioso piano per rendere l'economia cinese autosufficiente, basata su comuni rurali e piccole industrie. Il progetto si rivelò un disastro: la produzione agricola calò drasticamente, si verificarono carestie devastanti (che causarono milioni di morti) e si consumò una rottura definitiva con l'URSS.
+            Nel 1966 iniziò la Rivoluzione culturale, voluta da Mao per rinsaldare il proprio potere personale, eliminare oppositori e "purificare" la società dai valori borghesi. Le Guardie Rosse, composte soprattutto da giovani, perseguitarono insegnanti, funzionari, intellettuali e chiunque fosse ritenuto "nemico del popolo". Il caos politico e sociale travolse il Paese. Il primo ministro Zhou Enlai cercò di limitare i danni e preservare la stabilità, ma il culto della personalità di Mao rimase intatto fino alla sua morte nel 1976.
+            
+        <div class="image-container">
+            <img src="Mao Zedong.jpeg" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
 
-      <div class="paragraph-card">
-        <div class="date">1927-1949 🔥</div>
-        <h3>La Guerra Civile Cinese</h3>
-        <p>Il conflitto tra il Kuomintang (KMT) e il Partito Comunista Cinese (PCC) si intensifica. Il PCC, guidato da Mao Zedong, prevale alla fine.</p>
+            </p>
       </div>
+    </main>
 
-      <div class="paragraph-card">
-        <div class="date">1949 🏆</div>
-        <h3>Proclamazione della Repubblica Popolare Cinese</h3>
-        <p>Il 1° ottobre 1949, Mao Zedong proclama la nascita della Repubblica Popolare Cinese, segnando la vittoria del Partito Comunista.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">1958-1962 🔴</div>
-        <h3>Il Grande Balzo in Avanti</h3>
-        <p>Un tentativo fallito di Mao di trasformare la Cina in una potenza industriale e agricola attraverso la collettivizzazione forzata e politiche radicali.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">1966-1976 ✊</div>
-        <h3>La Rivoluzione Culturale</h3>
-        <p>Mao lancia la Rivoluzione Culturale, un movimento volto a eliminare il "vecchio" e a rafforzare il pensiero comunista, portando a violenze e disordini sociali.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">1978 🌐</div>
-        <h3>Le Riforme di Deng Xiaoping</h3>
-        <p>Dopo la morte di Mao, Deng Xiaoping avvia un periodo di riforme economiche, aprendo la Cina al mercato globale e migliorando la sua economia.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">1989 🕊️</div>
-        <h3>Le Proteste di Tiananmen</h3>
-        <p>Le proteste pacifiche degli studenti a Tiananmen vengono represse con forza dall'esercito, suscitando condanne internazionali.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">2001 🌍</div>
-        <h3>Entrata nel WTO</h3>
-        <p>La Cina entra nell'Organizzazione Mondiale del Commercio (WTO), segnando l'integrazione della Cina nell'economia globale.</p>
-      </div>
-
-      <div class="paragraph-card">
-        <div class="date">2020 💪</div>
-        <h3>La Cina oggi</h3>
-        <p>La Cina emerge come una delle potenze economiche mondiali e si proietta come protagonista della politica e dell'economia globale.</p>
-      </div>
-
-      <!-- Bottone centrato -->
-      <div class="button-container">
+     <!-- Bottone centrato -->
+     <div class="button-container">
         <button class="home-button" onclick="window.location.href = 'index.html';">Torna alla Home</button>
       </div>
-
-    </main>
 
     <footer class="presentation-footer">
       <p>Presentazione realizzata da <a href="#">Chiarilli & Farfarelli</a> | Classe 5°BI - 2025</p>

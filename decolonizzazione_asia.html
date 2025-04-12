@@ -160,6 +160,40 @@
       align-items: center;
       margin-top: 40px;
     }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: 50%;
+      width: 50%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .image-container img {
+        width: 100%;
+      }
+    }
+
+    .highlight {
+      color: var(--acid-green);
+      font-weight: 600;
+    }
+
+    .quote {
+      font-style: italic;
+      border-left: 3px solid var(--neon-pink);
+      padding-left: 15px;
+      margin: 20px 0;
+      color: rgba(255,255,255,0.9);
+    }
   </style>
 </head>
 <body>
@@ -176,52 +210,115 @@
       <h2 class="content-title">Principali Eventi della Decolonizzazione in Asia</h2>
 
       <div class="paragraph-card">
-        <div class="date">1947 🇮🇳</div>
-        <h3>Indipendenza dell'India</h3>
-        <p>Nel 1947, l'India ottiene l'indipendenza dal dominio britannico, grazie alla guida di Mahatma Gandhi e Jawaharlal Nehru, segnando l'inizio della fine del colonialismo britannico in Asia.</p>
+        <div class="date">Introduzione</div>
+        <h3>Il contesto storico</h3>
+        <p>Dopo la Seconda Guerra Mondiale, l'Asia divenne il teatro di una delle più grandi trasformazioni politiche del XX secolo: il crollo degli imperi coloniali e la nascita di Stati indipendenti. Paesi come India, Indonesia, Vietnam e Malesia, dopo secoli di dominio straniero, conquistarono la libertà attraverso rivolte armate, negoziati diplomatici e movimenti di massa.</p>
+        <p>Questo processo si inserì nel contesto della <span class="highlight">Guerra Fredda</span>, con le nuove nazioni spesso costrette a scegliere tra l'influenza americana e quella sovietica. La <span class="highlight">Conferenza di Bandung</span> del 1955 in Indonesia segnò la nascita del movimento dei <span class="highlight">Paesi non allineati</span>, che cercavano una terza via tra i due blocchi.</p>
       </div>
 
       <div class="paragraph-card">
-        <div class="date">1949 🏴‍☠️</div>
-        <h3>Rivoluzione Cinese</h3>
-        <p>Nel 1949, la Cina diventa una Repubblica Popolare dopo la vittoria del Partito Comunista di Mao Zedong, rovesciando il governo nazionalista del Kuomintang.</p>
+        <div class="date">1947</div>
+        <h3>Indipendenza dell'India</h3>
+        <p>Mahatma Gandhi fu il leader della lotta per l'indipendenza dell'India dal dominio britannico. La sua strategia si basava sulla <span class="highlight">resistenza non violenta</span> (Satyagraha), con proteste pacifiche, scioperi e disobbedienza civile. Il suo esempio ispirò movimenti per i diritti civili in tutto il mondo.</p>
+
+        <p>Dopo anni di mobilitazioni, nel 1947 il subcontinente indiano venne diviso in:</p>
+        <p>• India (a maggioranza indù)</p>
+        <p>• Pakistan (a maggioranza musulmana)</p>
+        <p>• Bangladesh (originariamente Pakistan Orientale, indipendente dal 1971)</p>
+        <p>• Sri Lanka (ex Ceylon)</p>
+        <p>• Myanmar (ex Birmania)</p>
+
+        <p>Questa divisione provocò violenze tra indù e musulmani, con milioni di profughi e oltre un milione di morti. Gandhi stesso fu assassinato nel 1948 da un estremista indù.</p>
+
+        <div class="image-container">
+          <img src="https://tse4.mm.bing.net/th?id=OIP.uVYtqxqAoskT-5RBYpQWaQHaHa&pid=Api&P=0&h=180" alt="Mappa partizione India">
+        </div>
+      </div>
+
+      <div class="paragraph-card">
+        <div class="date">1947 🏴‍☠️</div>
+        <h3>India & Pakistan</h3>
+        <p>La decolonizzazione dell'India rappresentò un evento epocale ma drammatico. La <span class="highlight">Partizione</span> voluta dagli inglesi creò due Stati:</p>
+        
+        <p><span class="highlight">Unione Indiana</span> (a maggioranza induista, guidata da Nehru)</p>
+        <p><span class="highlight">Pakistan</span> (musulmano, inizialmente diviso in due territori separati)</p>
+        
+        <p>Le conseguenze furono devastanti:</p>
+        <p>✔ 15 milioni di persone sfollate</p>
+        <p>✔ Oltre 1 milione di morti in scontri religiosi</p>
+        <p>✔ Guerra per il Kashmir (1947-48), conflitto ancora irrisolto</p>
+        
+        <p>L'India divenne una democrazia parlamentare, mentre il Pakistan cadde in una serie di colpi di Stato militari. Nel 1971, il <span class="highlight">Pakistan Orientale</span> si ribellò diventando il <span class="highlight">Bangladesh</span> dopo una guerra sanguinosa.</p>
+        
+        <div class="image-container">
+          <img src="https://origins.osu.edu/sites/default/files/migrated_files/1.%20India%20Pakistan.png" alt="Mappa India e Pakistan">
+        </div>
       </div>
 
       <div class="paragraph-card">
         <div class="date">1954 💥</div>
         <h3>Indipendenza del Vietnam</h3>
-        <p>Nel 1954, la Battaglia di Dien Bien Phu segna la fine del dominio coloniale francese in Indocina, portando alla divisione del Vietnam in Nord e Sud.</p>
+        <p>Prima della Seconda guerra mondiale, il Vietnam faceva parte dell'<span class="highlight">Indocina francese</span>. Durante l'occupazione giapponese (1940-1945), nacquero movimenti indipendentisti, tra cui il <span class="highlight">Vietminh</span>, un'organizzazione comunista guidata da Ho Chi Minh.</p>
+
+        <p>Nel 1945, Ho Chi Minh proclamò la <span class="highlight">Repubblica Democratica del Vietnam</span>, ma la Francia cercò di riprendere il controllo, scatenando una guerra d'indipendenza. I francesi vennero definitivamente sconfitti nella battaglia di <span class="highlight">Dien Bien Phu (1954)</span>.</p>
+
+        <p>La <span class="highlight">Conferenza di Ginevra</span> stabilì:</p>
+        <p>• Indipendenza di Laos e Cambogia</p>
+        <p>• Divisione temporanea del Vietnam al 17° parallelo</p>
+        <p>• Vietnam del Nord (comunista)</p>
+        <p>• Vietnam del Sud (filo-occidentale)</p>
+
+        <p>Nel Sud nacque il <span class="highlight">Vietcong</span>, movimento comunista che avviò una guerriglia per la riunificazione. Gli USA intervennero massicciamente negli anni '60, ma non riuscirono a vincere nonostante la superiorità militare. Dopo l'<span class="highlight">offensiva del Têt (1968)</span> e le proteste internazionali, si ritirarono nel 1973. Nel 1975 il Vietnam fu riunificato sotto un regime comunista.</p>
       </div>
 
       <div class="paragraph-card">
-        <div class="date">1957 🎉</div>
-        <h3>Indipendenza della Malesia</h3>
-        <p>La Malesia ottiene l'indipendenza dal Regno Unito nel 1957, con la fine di più di un secolo di dominio coloniale britannico.</p>
+        <div class="date">1975</div>
+        <h3>La Cambogia dei Khmer rossi</h3>
+        <p>Dopo l'indipendenza dalla Francia, la Cambogia cadde sotto il regime terroristico dei <span class="highlight">Khmer rossi</span> guidati da Pol Pot (1975-1979). Il loro obiettivo era creare una società completamente agricola, eliminando ogni traccia di modernità.</p>
+
+        <p>Il regime attuò un <span class="highlight">genocidio</span> sistematico:</p>
+        <p>• Eliminazione di intellettuali, professionisti e persino chi portava occhiali</p>
+        <p>• Deportazione forzata delle città alle campagne</p>
+        <p>• Lavori forzati e fame programmata</p>
+        <p>• Oltre 1,7 milioni di vittime (20% della popolazione)</p>
+
+        <p>Nel 1978 il <span class="highlight">Vietnam invase</span> la Cambogia, rovesciando il regime. I Khmer rossi continuarono la guerriglia fino agli anni '90. Solo nel 1991 si raggiunse un accordo di pace sotto l'egida dell'ONU.</p>
       </div>
 
       <div class="paragraph-card">
-        <div class="date">1965 🌍</div>
-        <h3>Indipendenza di Singapore</h3>
-        <p>Singapore ottiene l'indipendenza dalla Malesia nel 1965, dopo un periodo di tensioni politiche, diventando una repubblica sovrana.</p>
+        <div class="date">1949</div>
+        <h3>L'indipendenza dell'Indonesia</h3>
+        <p>L'Indonesia ottenne l'indipendenza dai Paesi Bassi nel 1949 dopo una lunga guerra (1945-1949). <span class="highlight">Sukarno</span>, primo presidente, cercò di creare uno Stato democratico basato sui "Cinque Principi" (Pancasila):</p>
+        <p>1. Fede in un unico Dio</p>
+        <p>2. Umanitarismo</p>
+        <p>3. Unità nazionale</p>
+        <p>4. Democrazia</p>
+        <p>5. Giustizia sociale</p>
+
+        <p>Nel 1955 ospitò la storica <span class="highlight">Conferenza di Bandung</span>, che diede vita al movimento dei <span class="highlight">Paesi non allineati</span>. Tuttavia, l'instabilità politica ed economica portò nel 1965 al colpo di Stato del generale <span class="highlight">Suharto</span>, che instaurò una dittatura militare filo-occidentale (1967-1998).</p>
       </div>
 
       <div class="paragraph-card">
-        <div class="date">1975 🇰🇭</div>
-        <h3>Indipendenza della Cambogia</h3>
-        <p>Nel 1975, il regime dei Khmer Rossi, guidato da Pol Pot, prende il controllo della Cambogia, con un periodo di devastazione per il popolo cambogiano, che segna la fine di secoli di dominio coloniale francese.</p>
+        <div class="date">1945-1952</div>
+        <h3>Il Giappone postbellico</h3>
+        <p>Dopo la resa nel 1945, il Giappone fu occupato dagli USA fino al 1952. Il generale MacArthur guidò una radicale <span class="highlight">democratizzazione</span>:</p>
+        <p>• Nuova Costituzione pacifista (articolo 9)</p>
+        <p>• Smantellamento dello zaibatsu (conglomerati industriali)</p>
+        <p>• Riforma agraria</p>
+        <p>• Demilitarizzazione</p>
+
+        <p>Negli anni '50 e '60, il Giappone conobbe un <span class="highlight">miracolo economico</span>:</p>
+        <p>• Sviluppo di industrie high-tech (Sony, Toyota, Honda)</p>
+        <p>• Modello produttivo basato su qualità e efficienza</p>
+        <p>• Forte identità aziendale (sistema del lavoro a vita)</p>
+        <p>• Bassa conflittualità sindacale</p>
+
+        <p>Pur mantenendo stretti legami con gli USA, il Giappone divenne la seconda economia mondiale negli anni '80.</p>
       </div>
 
-      <div class="paragraph-card">
-        <div class="date">1949-1970s 🌍</div>
-        <h3>De-colonizzazione in Asia sudorientale</h3>
-        <p>Nel corso dei decenni successivi alla Seconda Guerra Mondiale, le potenze coloniali europee vengono progressivamente estromesse dalle loro colonie in Asia, tra cui la Birmania (Myanmar), l'Indonesia e le Filippine.</p>
-      </div>
-
-      <!-- Bottone centrato -->
       <div class="button-container">
         <button class="home-button" onclick="window.location.href = 'index.html';">Torna alla Home</button>
       </div>
-
     </main>
 
     <footer class="presentation-footer">

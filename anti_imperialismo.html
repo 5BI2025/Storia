@@ -160,6 +160,29 @@
       align-items: center;
       margin-top: 40px;
     }
+
+     /* Centrare l'immagine e renderla responsiva */
+     .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;  /* Distanza tra il testo e l'immagine */
+    }
+
+    .image-container img {
+      max-width: 100%;  /* Assicurati che l'immagine non superi la larghezza del contenitore */
+      height: 50%;     /* Mantieni le proporzioni originali dell'immagine */
+      width: 50%;       /* L'immagine avrà una larghezza massima del 80% del contenitore */
+      border-radius: 10px; /* Bordo arrotondato per un effetto più elegante */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Leggera ombra per dare profondità */
+    }
+
+    /* Regole aggiuntive per schermi piccoli */
+    @media (max-width: 768px) {
+      .image-container img {
+        width: 100%;  /* Su schermi piccoli l'immagine prende tutta la larghezza disponibile */
+      }
+    }
   </style>
 </head>
 <body>
@@ -176,52 +199,123 @@
       <h2 class="content-title">Le Rivoluzioni Anti-Imperialiste</h2>
 
       <div class="paragraph-card">
-        <div class="date">1857-1858 ⚔️</div>
-        <h3>Rivolta dei Sepoy in India</h3>
-        <p>La Rivolta dei Sepoy, nota anche come la Prima Guerra di Indipendenza, è il primo grande movimento contro l'occupazione britannica in India.</p>
-      </div>
+        <div class="date">1956 ⚔️</div>
+        <h3>Guerra d'Algeria</h3>
+        <p>L'Algeria era una colonia francese dal 1830, considerata una parte integrante della Francia, abitata sia da una numerosa popolazione europea (i cosiddetti pied-noirs) sia da milioni di algerini musulmani, che però subivano forti discriminazioni politiche, sociali ed economiche.</p>
+        <p> Pieds-Noirs erano i coloni europei (in gran parte francesi, ma anche italiani e spagnoli) che vivevano in Algeria sin dall’epoca coloniale. Considerati cittadini francesi a tutti gli effetti, godevano di privilegi economici e politici rispetto alla popolazione algerina musulmana</p>
+        <p>Il 1° novembre 1954, il FLN (Fronte di Liberazione Nazionale) diede il via a una serie di attacchi armati contro postazioni francesi, marcando l’inizio della guerra di liberazione algerina.(battglia di Algeri)</p>
+        <p>Nel 1961, durante la Guerra d'Algeria, un colpo di stato fallito fu organizzato da un gruppo di ufficiali militari francesi, noti come i "pieds-noirs", che si opponevano agli accordi di pace con il Fronte di Liberazione Nazionale (FLN) e alla futura indipendenza dell'Algeria. Questi ufficiali, con il supporto di alcune fazioni dell'esercito, tentarono di rovesciare il governo del presidente francese Charles de Gaulle, che aveva avviato i negoziati con il FLN. i golpisti diedero origine ad Oas (Organisation de l'armèe secret) per azioni terroristiche</p>
+        <p>il tutto finì con l'armistizio di Evian con De Guelle nel 1962</p>
 
-      <div class="paragraph-card">
-        <div class="date">1954 ⚔️</div>
-        <h3>La Battaglia di Dien Bien Phu</h3>
-        <p>La vittoria dei Viet Minh contro la Francia a Dien Bien Phu segna la fine della dominazione coloniale francese in Indocina.</p>
-      </div>
+        <div class="image-container">
+            <img src="https://www.studiarapido.it/wp-content/uploads/2018/05/algeria.jpg" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
+    </div>
 
-      <div class="paragraph-card">
-        <div class="date">1954-1975 🕊️</div>
-        <h3>Guerra del Vietnam</h3>
-        <p>Il Vietnam del Nord, sostenuto dai paesi comunisti, lotta contro il Vietnam del Sud, appoggiato dagli Stati Uniti, per la liberazione dal colonialismo e dal dominio imperialista.</p>
-      </div>
+    <div class="paragraph-card">
+        <div class="date">1950 ⚔️</div>
+        <h3>Il congo</h3>
+        <p>Quando il Belgio concesse l'indipendenza il 30 giugno 1960, il Congo era completamente impreparato a governarsi. Non esisteva una vera classe dirigente locale: i belgi avevano mantenuto il controllo totale dell'amministrazione, dell'esercito e dell'economia, basata sullo sfruttamento di immense risorse minerarie (rame, cobalto, diamanti e uranio).
 
-      <div class="paragraph-card">
-        <div class="date">1954-1962 💥</div>
-        <h3>Guerra di Indipendenza dell'Algeria</h3>
-        <p>L'Algeria combatte una lunga e sanguinosa guerra di indipendenza contro il dominio coloniale francese, che culmina con l'indipendenza nel 1962.</p>
-      </div>
+        Il nuovo governo, guidato dal Primo Ministro Patrice Lumumba e dal Presidente Joseph Kasa-Vubu, si trovò immediatamente di fronte a una crisi. I soldati congolesi, ancora comandati da ufficiali belgi, si ribellarono, chiedendo l'africanizzazione dell'esercito. Nel contempo, la ricchissima regione del Katanga, sostenuta dalle compagnie minerarie belghe, proclamò la secessione sotto la guida di Moise Tshombe.</p>
 
-      <div class="paragraph-card">
-        <div class="date">1975 ✊</div>
-        <h3>Indipendenza del Mozambico</h3>
-        <p>Il Mozambico ottiene l'indipendenza dal Portogallo dopo una lunga lotta di liberazione condotta dal FRELIMO e altri movimenti di resistenza.</p>
-      </div>
+        <div class="image-container">
+            <img src="https://nbmofafrica.org/wp-content/uploads/2021/02/PATRICE-EMERY-LUMUMBA.jpeg" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
+    </div>
 
-      <div class="paragraph-card">
-        <div class="date">1980 🕊️</div>
-        <h3>Indipendenza dello Zimbabwe</h3>
-        <p>Lo Zimbabwe (ex-Rodesia) ottiene l'indipendenza dal Regno Unito dopo una lunga lotta di liberazione contro il regime razzista di minoranza bianca.</p>
-      </div>
+    <div class="paragraph-card">
+        <div class="date">1960 ⚔️</div>
+        <h3>Nigeria</h3>
+        <p>La Nigeria, ottenuta l'indipendenza dalla Gran Bretagna il 1° ottobre 1960, si presentava come una nazione dalle grandi potenzialità ma profondamente divisa al suo interno. Questo vasto territorio, unificato artificialmente dal colonialismo britannico, riuniva in un'unica entità statuale tre principali gruppi etnici con storie, culture e sistemi sociali profondamente diversi: gli Hausa-Fulani del nord, prevalentemente musulmani; gli Yoruba del sud-ovest; e gli Igbo del sud-est, in maggioranza cristiani.</p>
+        
+        <p>Dopo il colpo di stato, il generale Aguiyi-Ironsi, un igbo, divenne il leader del paese.</p>
 
-      <div class="paragraph-card">
-        <div class="date">1989 ✊</div>
-        <h3>Caduta del Muro di Berlino e fine dell'Imperialismo Sovietico</h3>
-        <p>La caduta del Muro di Berlino segna simbolicamente la fine del blocco sovietico e l'inizio di un periodo di transizione verso un nuovo ordine mondiale post-imperialista.</p>
-      </div>
+        <p>Però, il colpo di stato non fu accettato da tutti, nel luglio dello stesso anno, un altro gruppo di ufficiali militari, principalmente del nord del paese, rovesciò Aguiyi-Ironsi e mise al potere Yakubu Gowon</p>
+        
+        <p>Questo portò a un periodo di instabilità che culminò nel 1967 con la guerra civile nigeriana (nota anche come la Biafra War), in cui i popoli igbo tentarono di separarsi dalla Nigeria, creando il proprio stato, chiamato Biafra.</p>
 
-      <div class="paragraph-card">
-        <div class="date">1990-2000 ⚡</div>
-        <h3>Movimenti di Liberazione in Africa</h3>
-        <p>Molti paesi africani continuano la loro lotta contro il neocolonialismo e l'influenza delle potenze imperialiste occidentali, attraverso movimenti e guerre di liberazione.</p>
-      </div>
+
+        <div class="image-container">
+            <img src="https://cdn.calendarz.com/uploads/events/january/12/4108/nigerian-civil-war_new_cp.jpg" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
+    </div>
+
+    <div class="paragraph-card">
+        <div class="date">1960 ⚔️</div>
+        <h3>Kenya</h3>
+        <p>La rivoluzione keniana è conosciuta principalmente come la Rivolta dei Mau Mau, un movimento di resistenza contro il colonialismo britannico in Kenya. Questa rivolta è stata una delle lotte più significative per l'indipendenza africana.</p>
+        
+        <p>Nel 1952, un gruppo di contadini kikuyu (un'etnia dominante in Kenya) cominciò una ribellione armata contro il governo coloniale britannico. Questo gruppo venne chiamato Mau Mau.</p>
+
+        <p>I britannici risposero con repressione violenta, arrestando migliaia di sospetti, distruggendo villaggi e imponendo durissime punizioni. Il governo britannico creò anche campi di internamento per i sospetti ribelli.</p>
+
+        <p>Creazione KAU (Kenya African Union)</p>
+
+        <div class="image-container">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.Nkd9K-BFnP2TsvBbFTqv5QHaE8&pid=Api&P=0&h=180" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
+    </div>
+
+    <div class="paragraph-card">
+        <div class="date">1994 ⚔️</div>
+        <h3>Sudafrica</h3>
+        <p>La rivoluzione sudafricana è stata la lotta per abbattere il sistema di apartheid, una politica di segregazione razziale che ha oppresso la maggioranza nera del paese per decenni. Guidato dal Congresso Nazionale Africano (ANC) e da leader come Nelson Mandela, il movimento ha sfidato le leggi discriminatorie attraverso proteste, scioperi e resistenza civile. Dopo anni di violenza e repressione, l'apartheid fu abolito nel 1994, quando il Sudafrica divenne una nazione democratica con elezioni multirazziali, segnando l'inizio di una nuova era di uguaglianza e giustizia sociale.
+
+        </p>
+
+        <div class="image-container">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.fkBBf2QN0L7gk5XuaygA4gHaEQ&pid=Api&P=0&h=180" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
+    </div>
+
+    <div class="paragraph-card">
+        <div class="date">'60 al 70' ⚔️</div>
+        <h3>Malawi, Zambia e Angola: Lotte per l'Indipendenza</h3>
+        <p>Il Malawi, lo Zambia e l'Angola sono tre paesi africani che ottennero l'indipendenza negli anni '60 e '70. Il Malawi e lo Zambia divennero indipendenti dalla Gran Bretagna nel 1964, con Hastings Banda e Kenneth Kaunda come rispettivi leader. L'Angola, colonia portoghese, ottenne la sua indipendenza nel 1975 dopo una lunga guerra di liberazione contro il colonialismo portoghese e diverse fazioni armate. Questi paesi rappresentano importanti tappe nel processo di decolonizzazione dell'Africa, segnato da sfide politiche ed economiche ma anche dalla speranza di un futuro sovrano.
+        </p>
+
+        <div class="image-container">
+            <img src="https://media.evz.ro/wp-content/uploads/2023/03/angola-fortele-armate.jpg" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
+    </div>
+
+    <div class="paragraph-card">
+        <div class="date">1911 - 1960 ⚔️</div>
+        <h3>Libia,Somalia ed Etiopia Ex colonie italiane</h3>
+        <p>Colonizzazione: La Libia fu colonizzata dall'Italia a partire dal 1911, quando le truppe italiane occuparono il territorio che faceva parte dell'Impero Ottomano. Dopo una lunga guerra di resistenza da parte della popolazione locale, la Libia divenne una colonia italiana a tutti gli effetti.
+
+            Indipendenza: Dopo la Seconda Guerra Mondiale e la sconfitta dell'Italia, la Libia ottenne l'indipendenza nel 1951 come Regno di Libia, sotto il re Idris I. Successivamente, nel 1969, il colpo di stato guidato da Muammar Gheddafi portò alla creazione della Jamahiriya (Stato delle masse), segnando un capitolo importante nella storia del paese.</p>
+
+            <div class="image-container">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.Og2-z8ibI6Q5NDCPTfmDuQHaEo&pid=Api&P=0&h=180" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+            </div>
+
+            <br><br><p>Colonizzazione: La Somalia fu divisa in due territori sotto il controllo delle potenze coloniali: la Somalia italiana e la Somalia britannica. L'Italia controllava la parte che divenne la Somalia italiana, dove cercò di stabilire un insediamento coloniale.
+
+                Indipendenza: Nel 1960, la Somalia ottenne l'indipendenza dalla Gran Bretagna e dall'Italia, unificando i due territori e formando la Repubblica di Somalia. Tuttavia, il paese attraversò difficoltà politiche, con colpi di stato e instabilità che segnarono la sua storia.</p>
+
+                <div class="image-container">
+                    <img src="https://italiacoloniale.files.wordpress.com/2018/04/eutm_somalia_italia-7.jpg" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+                </div>
+
+                <p>Nel 1935, l'Italia fascista invade l'Etiopia, proclamando nel 1936 la Colonia dell'Africa Orientale Italiana, che includeva anche l'Eritrea e la Somalia. Nonostante l'occupazione italiana, l'Etiopia rimase un simbolo di resistenza africana, con Haile Selassie, il suo imperatore, che fuggì in esilio ma continuò a lottare per l'indipendenza. Nel 1941, le forze alleate, insieme alla resistenza etiope, liberarono l'Etiopia dalla dominazione italiana. Con il Trattato di Pace di Parigi del 1947, l'Italia riconobbe ufficialmente l'indipendenza dell'Etiopia, che rimase uno dei pochi paesi africani a mantenere la propria sovranità durante l'era coloniale.</p>
+
+                <p>Tuttavia, nel 1974, dopo anni di instabilità, l'imperatore Haile Selassie fu deposto in un colpo di stato che portò al potere il Derg, un regime militare guidato da Mengistu Haile Mariam. Questo periodo fu segnato da una feroce dittatura e da gravi violazioni dei diritti umani, fino alla fine del regime nel 1991.
+
+                </p>
+                
+                <div class="image-container">
+                    <img src="https://www.tag24.it/wp-content/uploads/2023/04/etiopia-italia.jpg" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+                </div>
+
+
+        <div class="image-container">
+            <img src="https://www.ilpost.it/wp-content/uploads/2020/06/italia.png" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
+    </div>
+
+
 
       <!-- Bottone centrato -->
       <div class="button-container">

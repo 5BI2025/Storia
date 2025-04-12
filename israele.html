@@ -161,6 +161,29 @@
       align-items: center;
       margin-top: 40px;
     }
+
+    /* Centrare l'immagine e renderla responsiva */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;  /* Distanza tra il testo e l'immagine */
+    }
+
+    .image-container img {
+      max-width: 100%;  /* Assicurati che l'immagine non superi la larghezza del contenitore */
+      height: 50%;     /* Mantieni le proporzioni originali dell'immagine */
+      width: 50%;       /* L'immagine avrà una larghezza massima del 80% del contenitore */
+      border-radius: 10px; /* Bordo arrotondato per un effetto più elegante */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Leggera ombra per dare profondità */
+    }
+
+    /* Regole aggiuntive per schermi piccoli */
+    @media (max-width: 768px) {
+      .image-container img {
+        width: 100%;  /* Su schermi piccoli l'immagine prende tutta la larghezza disponibile */
+      }
+    }
   </style>
 </head>
 <body>
@@ -180,48 +203,129 @@
         <div class="date">1897 ✡️</div>
         <h3>Primo Congresso Sionista</h3>
         <p>Theodor Herzl organizza il congresso a Basilea, gettando le basi per uno Stato ebraico. Nasce il movimento sionista moderno.</p>
-      </div>
+        <p>Nel 1897, Theodor Herzl, giornalista e scrittore austriaco, organizzò il primo Congresso Sionista a Basilea, in Svizzera, che rappresentò un momento fondamentale nella storia del movimento sionista. Herzl, che si era profondamente convinto della necessità di un rifugio sicuro per gli ebrei, in risposta all'antisemitismo crescente in Europa, vide in questo congresso l'opportunità di unire la comunità ebraica internazionale attorno a un progetto politico concreto.</p>
+        <p>Il congresso, che riunì rappresentanti ebrei da tutta Europa, sancì la nascita del sionismo moderno come movimento politico e ideologico. L'obiettivo principale del congresso era quello di ottenere il supporto per la creazione di uno Stato ebraico in Palestina, un territorio che da secoli aveva legami storici e religiosi con il popolo ebraico, ma che era sotto il dominio dell'Impero Ottomano. La visione di Herzl era quella di realizzare un “focolare nazionale ebraico”, che potesse garantire agli ebrei una casa sicura e protezione contro le persecuzioni.</p>
+        <div class="image-container">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.U2EgB6plB1xUJgJp5GnXRQHaKS&pid=Api&P=0&h=180" alt="Theodor Herzl">
+          </div>
+    </div>
 
       <div class="paragraph-card">
         <div class="date">1917 📜</div>
         <h3>Dichiarazione Balfour</h3>
-        <p>Il governo britannico si impegna a sostenere la creazione di un "focolare nazionale" ebraico in Palestina.</p>
+        <p>La Dichiarazione Balfour, datata 2 novembre 1917, è uno degli eventi più significativi nella storia del conflitto arabo-israeliano e nel processo che ha portato alla creazione dello Stato di Israele. Essa rappresenta un documento ufficiale rilasciato dal governo britannico durante la Prima Guerra Mondiale, che esprimeva il suo sostegno per la creazione di un “focolare nazionale” ebraico in Palestina, un territorio che all'epoca era sotto il controllo dell'Impero Ottomano.
+
+           <br><br> La dichiarazione prende il nome dal Arthur James Balfour, allora Segretario di Stato per gli Affari Esteri del Regno Unito, che scrisse una lettera indirizzata a Lord Rothschild, un importante leader della comunità ebraica britannica. Il testo della dichiarazione affermava che il governo britannico "vedeva con favore l'istituzione in Palestina di un focolare nazionale per il popolo ebraico" e che avrebbe fatto il possibile per agevolare questo obiettivo, "salvaguardando i diritti civili e religiosi delle comunità non ebraiche" presenti nel territorio.
+            
+           <br><br> La Dichiarazione Balfour si inserisce in un contesto geopolitico complesso. Durante la Prima Guerra Mondiale, la Gran Bretagna cercava alleanze e sostegno da diverse fazioni per indebolire l'Impero Ottomano, che era alleato della Germania. Il sostegno agli ebrei per un ritorno in Palestina veniva visto come un modo per ottenere il supporto delle comunità ebraiche internazionali, specialmente negli Stati Uniti, che erano vitali per gli sforzi bellici alleati. Inoltre, la Gran Bretagna aveva già interessi strategici in Palestina, essendo una via di passaggio per le rotte commerciali verso l'India e il Medio Oriente.
+
+           <br><br>La dichiarazione aveva però anche conseguenze significative per la popolazione araba palestinese, che vedeva minacciata la propria sovranità. La promessa britannica di sostenere un "focolare nazionale" per gli ebrei in Palestina contraddiceva le promesse fatte precedentemente agli arabi, in particolare attraverso il Trattato Hussein-McMahon, che garantiva l'indipendenza araba in cambio del sostegno contro l'Impero Ottomano.
+
+           <br><br>La Dichiarazione Balfour segnò quindi l'inizio di un conflitto di lunga durata tra le comunità arabe e ebraiche in Palestina, un conflitto che avrebbe avuto implicazioni fondamentali nella creazione dello Stato di Israele nel 1948 e nella continua lotta per il controllo del territorio. La dichiarazione, pur essendo un impegno da parte del governo britannico, non venne seguita da un piano concreto per la creazione immediata di uno Stato ebraico, ma fu piuttosto il punto di partenza per le successive politiche internazionali in Palestina e un elemento centrale nella lotta per l'autodeterminazione sia degli ebrei che degli arabi..
+        
+           <div class="image-container">
+            <img src="https://i1.wp.com/jcpa.org/wp-content/uploads/2017/02/1743866_original.jpg" alt="Theodor Herzl">
+          </div>
+        </p>
       </div>
 
       <div class="paragraph-card">
         <div class="date">1947 🕊️</div>
         <h3>Piano di Partizione ONU</h3>
-        <p>L'ONU approva la risoluzione 181 che divide la Palestina in uno Stato ebraico e uno arabo, con Gerusalemme sotto controllo internazionale.</p>
+        <p>Il 29 novembre 1947, l'Assemblea Generale delle Nazioni Unite approvò la Risoluzione 181, che proponeva la divisione della Palestina in due Stati indipendenti: uno ebraico e uno arabo. Gerusalemme sarebbe dovuta rimanere sotto controllo internazionale, per garantire l'accesso e la protezione dei luoghi sacri per tutte le religioni. La risoluzione fu accolta positivamente dalla comunità ebraica, ma respinta dai paesi arabi e dai palestinesi, e portò a tensioni e conflitti che culminarono nella guerra del 1948.
+
+        </p>
+        <div class="image-container">
+            <img src="http://clevelandjewishhistory.net/events/images/res181-partion-map-wikipedia.jpg" alt="Theodor Herzl">
+          </div>
       </div>
 
       <div class="paragraph-card">
         <div class="date">14 Maggio 1948 🎉</div>
         <h3>Nascita dello Stato</h3>
-        <p>David Ben-Gurion proclama l'indipendenza di Israele. Scatta immediatamente l'attacco degli Stati arabi confinanti.</p>
-      </div>
+        <p>Il 14 maggio 1948, David Ben-Gurion, primo ministro israeliano, proclamò ufficialmente la nascita dello Stato di Israele. Immediatamente dopo, gli Stati arabi confinanti (Egitto, Giordania, Siria, Libano e Iraq) attaccarono Israele, dando inizio alla guerra arabo-israeliana del 1948. Il conflitto, che durò fino al 1949, vide Israele resistere e, alla fine, espandere i propri territori oltre i confini stabiliti dalla Risoluzione ONU 181.</p>
+        
+        <div class="image-container">
+            <img src="https://api.time.com/wp-content/uploads/2015/05/david-ben-gurion.jpg?resize=700" alt="Theodor Herzl">
+          </div>
+    </div>
+
+    <div class="paragraph-card">
+        <div class="date">1948 ⚔️</div>
+        <h3>Guerra del 48 </h3>
+
+        <p>
+        1- Il 14 maggio 1948, David Ben-Gurion proclama la nascita dello Stato di Israele.<br><br>
+
+        2- Il giorno successivo, Egitto, Siria, Giordania, Libano e Iraq invadono la Palestina per impedire la creazione dello Stato ebraico.<br><br>
+
+        3- Gli eserciti arabi sono numericamente superiori, ma Israele è meglio organizzato e motivato.<br><br>
+
+        4- israele respinge gli attacchi e amplia i suoi confini oltre quelli previsti dalla Risoluzione ONU 181.<br><br>
+
+        5- L'Egitto prende il controllo della Striscia di Gaza.<br><br>
+        </p>
+      
+        <div class="image-container">
+            <img src="guerra 48 1.png" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+            <img src="guerra 48 2.png" alt="Theodor Herzl" style="margin-bottom: 50%;">
+        </div>
+        <div class="image-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/1948_Arab_Israeli_War_-_May_15-June_10.svg/567px-1948_Arab_Israeli_War_-_May_15-June_10.svg.png" style="margin-left: 51.5%; transform: translateY(-105%);">
+        </div>
+    </div>
 
       <div class="paragraph-card">
         <div class="date">1967 ⚔️</div>
         <h3>Guerra dei Sei Giorni</h3>
-        <p>Israele conquista Gerusalemme Est, Cisgiordania, Gaza, Sinai e Golan in una guerra lampo contro Egitto, Siria e Giordania.</p>
-      </div>
+        <p>Israele conquista Gerusalemme Est, Cisgiordania, Gaza, Sinai e Golan in una guerra lampo contro Egitto, Siria e Giordania<br>
+        <p>1)OLP Yasser Afrat (Organizzazione Liberazione Palestina)<br><br>2)Risoluzione 242<br><br>3)Lega Araba<br><br>4)Accordi di Campo David</p>
+        </p>
+      
+        <div class="image-container">
+            <img src="guerra dei 6 giorni 1.png" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+            <img src="guerra dei 6 giorni 2.png" alt="Theodor Herzl">
+        </div>
+    </div>
 
-      <div class="paragraph-card">
+    <div class="paragraph-card">
         <div class="date">1973 🔥</div>
         <h3>Guerra del Kippur</h3>
-        <p>Attacco a sorpresa di Egitto e Siria durante la festività ebraica. Pesanti perdite israeliane ma vittoria finale.</p>
+        <p>1)Egitto e Siria vogliono riprendersi i territori persi nella Guerra dei Sei Giorni (1967)</p>
+        <p>2)La data scelta è il giorno di Yom Kippur, la festività ebraica più sacra, per sorprendere Israele.</p>
+        <p>3)Crisi diplomatica tra superpotenze (Rischio Guerra Fredda).</p>
+
+        <div class="image-container">
+            <img src="yom kippur 2 (1).png" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+            <img src="yom kippur 2 (2).png" alt="Theodor Herzl">
+        </div>
+      </div>
+
+    <div class="paragraph-card">
+        <div class="date">1987–1993</div>
+        <h3>1 intifada</h3>
+        <p>1)Creazione di Hamas<br><br>2)Attentati ad Israele<br><br>3) Istituzione ANP (Autorità Nazionale Palesestinese)<br><br>4) Trattati di Oslo (riconoscimento reciproco)</p>
+        <div class="image-container">
+            <img src="https://ichef.bbci.co.uk/images/ic/1200x675/p01gtcc7.jpg" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
       </div>
 
       <div class="paragraph-card">
-        <div class="date">1979 🤝</div>
-        <h3>Accordi di Camp David</h3>
-        <p>Primo trattato di pace tra Israele e un paese arabo (Egitto). Menachem Begin e Anwar Sadat vincono il Nobel per la pace.</p>
+        <div class="date">2000-2005</div>
+        <h3>2 intifada</h3>
+        <p>1)Innalzamento dei muri<br><br>2)Attentati contro israele (corpi bomba)<br><br>3)Ariel Sharon (politico dell' opposizione) visita la Spianata delle Moschee a Gerusalemme Est <br><br>4) Fine Trattati di Oslo</p>
+        <div class="image-container">
+            <img src="https://bilder.deutschlandfunk.de/96/58/9a/eb/96589aeb-36be-4ce7-a28f-a76055b4f1d7/strassenschlacht-ramallah-28-september-2000-ausbruch-zweite-intifada-100-1280xauto.jpg" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
       </div>
 
       <div class="paragraph-card">
-        <div class="date">1993 ✌️</div>
-        <h3>Accordi di Oslo</h3>
-        <p>Israele e OLP si riconoscono reciprocamente. Creazione dell'Autorità Palestinese per governare parti dei Territori Occupati.</p>
+        <div class="date">2023</div>
+        <h3>Attacco di Hamas a Israele</h3>
+        <p>1)7 ottobre<br><br>2)Israele è entrato a Gaza<br><br>3)La guerra sta continuando</p>
+        <div class="image-container">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.-DI46mP6q_ZWQPRb0CkW1wHaEK&pid=Api&P=0&h=180" alt="Theodor Herzl" style="margin-right: 20px;">  <br>
+        </div>
       </div>
 
       <!-- Bottone centrato -->
