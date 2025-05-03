@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il dialogo tra Kim e Ferriera - I sentieri dei nidi di ragno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Stili ereditati dalla pagina principale */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Raleway', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        .article-header {
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.istoreto.it/wp-content/uploads/2020/04/partigiani-valpellice-1944.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .article-header h1 {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            line-height: 1.3;
+        }
+
+        .article-header .subtitle {
+            font-style: italic;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        .breadcrumb a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Contenuto articolo */
+        .dialogue-container {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .dialogue-intro {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .dialogue-scene {
+            margin-bottom: 60px;
+        }
+
+        .dialogue-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .dialogue-header h2 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .dialogue-header p {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .dialogue-speaker {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .speaker-kim {
+            justify-content: flex-start;
+        }
+
+        .speaker-ferriera {
+            justify-content: flex-end;
+        }
+
+        .speaker-content {
+            max-width: 80%;
+        }
+
+        .speaker-kim .speaker-content {
+            background: var(--light-color);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 8px;
+        }
+
+        .speaker-ferriera .speaker-content {
+            background: #f0f7ff;
+            border-right: 4px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 8px 0 8px 8px;
+        }
+
+        .speaker-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .speaker-kim .speaker-name {
+            color: var(--secondary-color);
+        }
+
+        .speaker-ferriera .speaker-name {
+            color: var(--accent-color);
+        }
+
+        .speaker-name i {
+            margin-right: 10px;
+        }
+
+        .dialogue-text {
+            line-height: 1.8;
+        }
+
+        .dialogue-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 30px 0;
+            padding-left: 20px;
+            border-left: 3px solid #ddd;
+            font-style: italic;
+        }
+
+        /* Sezione analisi */
+        .analysis-section {
+            background: var(--light-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .analysis-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .analysis-container h2 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .analysis-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .analysis-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .article-footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .article-footer h2 {
+            font-family: var(--font-title);
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .back-btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .article-header .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .dialogue-container {
+                padding: 30px 20px;
+            }
+            
+            .speaker-content {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header articolo -->
+    <header class="article-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &raquo; <a href="opere.html">Opere</a> &raquo; <a href="sentieri-nidi-ragno.html">I sentieri dei nidi di ragno</a> &raquo; <span>Dialogo tra Kim e Ferriera</span>
+            </div>
+            <h1>Il dialogo notturno tra Kim e Ferriera</h1>
+            <p class="subtitle">"La stessa cosa ma tutto il contrario" - L'analisi delle motivazioni partigiane nel capitolo IX</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dialogue-container">
+            <div class="dialogue-intro">
+                <p>Nel cuore della notte, mentre si dirigono verso un altro accampamento partigiano, il commissario politico Kim e il comandante militare Ferriera discutono animatamente sulla composizione sociale delle bande e sulle diverse motivazioni che spingono gli uomini alla Resistenza. Questo dialogo fondamentale del capitolo IX rivela le profonde differenze tra le due figure nella loro interpretazione della lotta partigiana.</p>
+            </div>
+
+            <div class="dialogue-scene">
+                <div class="dialogue-header">
+                    <h2>Il confronto</h2>
+                    <p>Tra pragmatismo militare e analisi politica</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-ferriera">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-user-shield"></i> Ferriera
+                        </div>
+                        <div class="dialogue-text">
+                            "Ti sei convinto che è uno sbaglio, Kim? È stata un'idea sbagliata la tua, di fare un distaccamento tutto di uomini poco fidati, con un comandante meno fidato ancora. Vedi quello che rendono. Se li dividevamo un po' qua un po' là in mezzo ai buoni era più facile che rigassero dritti."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-speaker speaker-kim">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-book"></i> Kim
+                        </div>
+                        <div class="dialogue-text">
+                            "Per me questo è il distaccamento di cui sono più contento. Gli uomini combattono tutti, c'è lo stesso furore in loro, cioè non lo stesso, ognuno ha il suo furore, ma ora combattono tutti insieme. Basta un nulla per salvarli o per perderli... Questo è politico... Dare loro un senso..."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-note">
+                    Ferriera vede le cose in termini militari semplici: disciplina, affidabilità, efficienza. Kim invece cerca di leggere nelle complesse motivazioni individuali dei partigiani una chiave politica più profonda.
+                </div>
+
+                <div class="dialogue-speaker speaker-ferriera">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-user-shield"></i> Ferriera
+                        </div>
+                        <div class="dialogue-text">
+                            "Ma Kim, quando la capirai che questa è una brigata d'assalto, non un laboratorio d'esperimenti? Capisco che avrai le tue soddisfazioni scientifiche a controllare le reazioni di questi uomini... Il lavoro politico che dovresti fare sarebbe di metterli tutti mischiati e dare coscienza di classe... Senza contare il rendimento militare, poi..."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-speaker speaker-kim">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-book"></i> Kim
+                        </div>
+                        <div class="dialogue-text">
+                            "Questo non è un esercito, vedi, da dir loro: questo è il dovere. Non puoi parlar di dovere qui, non puoi parlare di ideali: patria, libertà, comunismo. Non ne vogliono sentir parlare di ideali, gli ideali son buoni tutti ad averli, anche dall'altra parte ne hanno di ideali... Qui si combatte e si muore così, senza gridare evviva."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-note">
+                    Kim demistifica la retorica degli ideali, cogliendo invece il "furore" come motore autentico della lotta partigiana - un sentimento primario che precede le elaborazioni politiche.
+                </div>
+
+                <div class="dialogue-speaker speaker-ferriera">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-user-shield"></i> Ferriera
+                        </div>
+                        <div class="dialogue-text">
+                            "E perché allora? Cosa li spinge a combattere, dimmi?"
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-speaker speaker-kim">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-book"></i> Kim
+                        </div>
+                        <div class="dialogue-text">
+                            "Vedi, ci sono i contadini... per loro è la difesa della patria, i contadini hanno una patria. Gli operai hanno una loro storia di salari, di scioperi... combattono qui per conquistare una patria ancora da conquistare. Poi c'è qualche intellettuale... combattendo scopriranno nuove cose nella lotta degli uomini... E quelli come gli uomini del Dritto, ladruncoli, carabinieri, militi... combattono per l'offesa della loro vita, il buio della loro strada..."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-speaker speaker-ferriera">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-user-shield"></i> Ferriera
+                        </div>
+                        <div class="dialogue-text">
+                            "Quindi, lo spirito dei nostri... e quello della brigata nera... la stessa cosa?"
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-speaker speaker-kim">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-book"></i> Kim
+                        </div>
+                        <div class="dialogue-text">
+                            "La stessa cosa ma tutto il contrario. Perché qui si è nel giusto, là nello sbagliato. Qua si risolve qualcosa, là ci si ribadisce la catena... Da noi, niente va perduto, nessun gesto, nessuno sparo, pur uguale al loro, va perduto, tutto servirà se non a liberare noi a liberare i nostri figli... L'altra è la parte dei gesti perduti, degli inutili furori..."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sezione analisi -->
+    <section class="analysis-section">
+        <div class="analysis-container">
+            <h2>Significato del dialogo</h2>
+            <div class="analysis-content">
+                <p>Questo dialogo fondamentale rappresenta il cuore teorico del romanzo, dove Calvino, attraverso Kim, elabora una visione complessa e antiretorica della Resistenza. La contrapposizione tra Ferriera (pragmatismo militare) e Kim (analisi politica) riflette le tensioni reali all'interno del movimento partigiano.</p>
+                
+                <p>Kim riconosce che lo stesso "furore" anima sia i partigiani che i fascisti, ma la differenza sta nella direzione storica di questo furore: mentre per i partigiani rappresenta un motore di liberazione, per i fascisti è strumento di oppressione. La Resistenza viene così privata di ogni aura mitica e restituita alla sua dimensione umana, fatta di motivazioni eterogenee e spesso contraddittorie.</p>
+                
+                <p>Calvino, attraverso questo dialogo, compie un'operazione rivoluzionaria nella letteratura resistenziale: mostra la Resistenza non come un blocco monolitico, ma come un fenomeno complesso in cui convivono diverse spinte sociali e psicologiche.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+        <div class="container">
+            <h2>torna alla home</h2>
+            <a href="index.html" class="back-btn">home</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -3,269 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentazione Storia - 5Bi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Bebas+Neue&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --electric-blue: #00a8ff;
-            --neon-pink: #ff2d75;
-            --acid-green: #a3ff47;
-            --dark-bg: #121212;
-            --glow: 0 0 15px currentColor;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--dark-bg);
-            color: white;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        .presentation-container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0;
-            perspective: 1000px;
-        }
-
-        /* Header stile "spotlight" */
-        .presentation-header {
-            background: linear-gradient(45deg, #0f0c29, #302b63);
-            padding: 40px 30px;
-            text-align: center;
-            position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-            margin-bottom: 50px;
-            transform-style: preserve-3d;
-        }
-
-        .presentation-header::after {
-            content: "";
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 50px;
-            background: radial-gradient(ellipse at center, rgba(0,168,255,0.5) 0%, transparent 70%);
-            z-index: -1;
-        }
-
-        .presentation-header h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 4rem;
-            margin: 0;
-            background: linear-gradient(to right, var(--electric-blue), var(--neon-pink));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            animation: textGlow 2s infinite alternate;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--acid-green);
-            margin-top: 10px;
-            text-shadow: var(--glow);
-        }
-
-        /* Indice stile "holographic" */
-        .index-container {
-            padding: 0 40px 60px;
-        }
-
-        .index-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            color: var(--electric-blue);
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .index-title::before {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--electric-blue), var(--neon-pink));
-        }
-
-        .index-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 0;
-        }
-
-        .index-list li {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .index-list li a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            height: 100%;
-            width: 100%;
-        }
-
-        .index-list li:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 40px rgba(0,168,255,0.3);
-            border-color: var(--electric-blue);
-            cursor: pointer;
-        }
-
-        .index-list li:hover strong {
-            color: var(--neon-pink);
-        }
-
-        .index-list li::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                transparent 0%,
-                rgba(0,168,255,0.1) 50%,
-                transparent 100%
-            );
-            transform: rotate(30deg);
-            animation: shine 3s infinite;
-        }
-
-        .index-list li strong {
-            display: block;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--acid-green);
-            transition: color 0.3s ease;
-        }
-
-        .index-list li .emoji {
-            font-size: 2rem;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            opacity: 0.7;
-            filter: drop-shadow(0 0 5px currentColor);
-        }
-
-        /* Footer stile "cyber" */
-        .presentation-footer {
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(to right, #0f0c29, #302b63);
-            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
-            margin-top: 80px;
-        }
-
-        .presentation-footer p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-        }
-
-        .presentation-footer a {
-            color: var(--acid-green);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Animazioni */
-        @keyframes textGlow {
-            0% { text-shadow: 0 0 10px rgba(0,168,255,0.5); }
-            100% { text-shadow: 0 0 20px rgba(255,45,117,0.7); }
-        }
-
-        @keyframes shine {
-            0% { transform: rotate(30deg) translate(-10%, -10%); }
-            100% { transform: rotate(30deg) translate(10%, 10%); }
-        }
-
-        /* Effetti responsive */
-        @media (max-width: 768px) {
-            .presentation-header h1 {
-                font-size: 2.5rem;
-            }
-            .index-list {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Italo Calvino - Maestro della Letteratura Italiana</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="presentation-container">
-        <header class="presentation-header">
-            <h1>Terzo mondo e decolonizzazione</h1>
-            <p class="subtitle">Liberi dal colonialismo, ma ancora prigionieri della loro storia.</p>
-        </header>
+    <header class="hero">
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">Italo<span>Calvino</span></a>
+                <ul class="nav-links">
+                    <li><a href="#biografia">Biografia</a></li>
+                    <li><a href="#opere">Opere</a></li>
+                    <li><a href="#stile">Stile</a></li>
+                    <li><a href="#galleria">Galleria</a></li>
+                    <li><a href="#citazioni">Citazioni</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h1>Italo Calvino</h1>
+            <p>1923 - 1985</p>
+            <p class="subtitle">Uno dei più innovativi scrittori del Novecento italiano</p>
+            <a href="#biografia" class="btn">Scopri di più</a>
+        </div>
+    </header>
 
-        <main class="index-container">
-            <h2 class="index-title">Cosa troverai</h2>
-            <ol class="index-list">
-                <li onclick="location.href='decolonizzazione_asia.html'">
-                    <a href="decolonizzazione_asia.html">
-                        <strong>La decolonizzazione in Asia</strong>
-                        Dall'Indocina francese alle indipendenze: il tramonto degli imperi
-                        <span class="emoji">☭</span>
-                    </a>
-                </li>
-                <li onclick="location.href='cina.html'">
-                    <a href="cina.html">
-                        <strong>Republica popolare cinese</strong>
-                        Dalla lunga marcia al potere di Mao: la nascita della Cina moderna
-                        <span class="emoji">🔥</span>
-                    </a>
-                </li>
-                <li onclick="location.href='anti_imperialismo.html'">
-                    <a href="anti_imperialismo.html">
-                        <strong>Rivoluzioni Anti-imperialiste</strong>
-                        Dagli schiavi ai ribelli: il riscatto di chi disse no ai padroni.
-                        <span class="emoji">🔫</span>
-                    </a>
-                </li>
-                <li onclick="location.href='cuba.html'">
-                    <a href="cuba.html">
-                        <strong>Rivoluzione Cubana</strong>
-                        hasta la victoria siempre
-                        <span class="emoji">✊</span>
-                    </a>
-                </li>
-                <li onclick="location.href='israele.html'">
-                    <a href="israele.html">
-                        <strong>Israele</strong>
-                        עם ישראל חי - il popolo d'israele vive
-                        <span class="emoji">✡︎𓂆</span>
-                    </a>
-                </li>
-            </ol>
-        </main>
+    <section id="biografia" class="section bio-section">
+        <div class="container">
+            <h2 class="section-title">Biografia</h2>
+            <div class="bio-content">
+                <div class="bio-text">
+                    <p>
+                        Italo Calvino nacque nel 1923 a Santiago de las Vegas, Cuba, dove il padre lavorava come agronomo e la madre era assistente di Botanica. Nel 1925 la famiglia si trasferì a Sanremo, dove Calvino studiò fino al liceo. Nel 1942 si iscrisse alla facoltà di Agraria a Torino, ma abbandonò presto gli studi. Nel 1943 si unì alla Resistenza, combattendo con le brigate Garibaldi sulle Alpi Marittime. Dopo la guerra si laureò in Lettere con una tesi su Joseph Conrad, e iniziò a scrivere romanzi neorealisti come <em>Il sentiero dei nidi di ragno</em> (1947) e <em>Ultimo viene il corvo</em> (1949). Collaborò con <em>l'Unità</em> e lavorò alla casa editrice Einaudi. Nel 1956, in seguito alla crisi ideologica causata dall’invasione sovietica dell’Ungheria, abbandonò il PCI ma proseguì il suo impegno culturale. Pubblicò opere come <em>I nostri antenati</em>, <em>Fiabe italiane</em> (1956), <em>Marcovaldo</em> (1963) e <em>La giornata di uno scrutatore</em> (1963), allontanandosi dal Neorealismo. Nel 1964 sposò Esther Judith Singer e si trasferì a Parigi, dove fu influenzato dallo strutturalismo e dalla semiotica. Da questi studi nacquero <em>Le cosmicomiche</em> (1965), <em>Ti con zero</em> (1967), <em>Le città invisibili</em> (1972), <em>Il castello dei destini incrociati</em> (1973) e <em>Se una notte d’inverno un viaggiatore</em> (1979). Tornò in Italia nel 1980, vivendo a Roma e partecipando al dibattito culturale attraverso giornali e conferenze. Morì nel 1985 a Siena, colpito da un ictus. Le sue ultime opere, <em>Sotto il sole giaguaro</em> (1986) e <em>Lezioni americane</em> (1988), furono pubblicate postume.
+                        </p>
+                        
+                </div>
+                <div class="bio-image">
+                    <img src="https://www.raicultura.it/dl/img/2022/12/22/1671702986987_00COVER.jpg" alt="Italo Calvino nel 1984">
+                    <div class="bio-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>15 ottobre 1923</span>
+                            <p>Nascita a Cuba</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-book"></i>
+                            <span>1947</span>
+                            <p>Primo romanzo pubblicato</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-award"></i>
+                            <span>1957</span>
+                            <p>Premio Viareggio</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-cross"></i>
+                            <span>19 settembre 1985</span>
+                            <p>Morte a Siena</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <footer class="presentation-footer">
-            <p>Presentazione realizzata da <a href="#">Chiarilli & Farfarelli</a> | Classe 5°BI - 2025</p>
-        </footer>
-    </div>
+    <section id="opere" class="section works-section">
+        <div class="container">
+            <h2 class="section-title">Opere Principali</h2>
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('https://www.nicocomix.it/wp-content/uploads/2020/04/Il-sentiero-dei-nidi-di-ragno.jpg');"></div>
+                    <div class="work-info">
+                        <h3>Il sentiero dei nidi di ragno</h3>
+                        <span class="year">1947</span>
+                        <p>Primo romanzo neorealista ispirato alla Resistenza, raccontato attraverso gli occhi di un bambino.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('https://www.mattedaleggere.it/wp-content/uploads/2016/07/default.jpg');"></div>
+                    <div class="work-info">
+                        <h3>Il visconte dimezzato</h3>
+                        <span class="year">1952</span>
+                        <p>Primo volume della trilogia "I nostri antenati", allegoria della condizione umana divisa tra bene e male.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('http://www.lacooltura.com/wp-content/uploads/2016/04/Lincontro-Cosimo-e-Viol-copy.jpg');"></div>
+                    <div class="work-info">
+                        <h3>Il barone rampante</h3>
+                        <span class="year">1957</span>
+                        <p>Secondo volume della trilogia, storia di un giovane nobile che sceglie di vivere sugli alberi.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('https://pad.mymovies.it/streaming-rassegne/plat-112/Marcovaldo_1.jpg');"></div>
+                    <div class="work-info">
+                        <h3>Marcovaldo</h3>
+                        <span class="year">1963</span>
+                        <p>Racconti umoristici sulle avventure di un operaio nella città industriale.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('citta_invisibile.png');"></div>
+                    <div class="work-info">
+                        <h3>Le città invisibili</h3>
+                        <span class="year">1972</span>
+                        <p>Dialogo tra Marco Polo e Kublai Khan che descrive città fantastiche e allegoriche.</p>
+                        
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('https://tse4.mm.bing.net/th?id=OIP.4_lI9vLohOHM39g9uqr0pQHaE8&pid=Api&P=0&h=180');"></div>
+                    <div class="work-info">
+                        <h3>Le formazioni partigiane</h3>
+                        <span class="year">1947</span>
+                        <p>Uomini diversi, uniti dal furore per la lotta contro il fascismo e una redenzione comune.</p>
+                        <a href="testo1.html" class="work-link">Approfondisci <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.1u8Dfqn8Ck4l10IawCsxSQAAAA&pid=Api&P=0&h=180');"></div>
+                    <div class="work-info">
+                        <h3>Leonia</h3>
+                        <span class="year">1979</span>
+                        <p>Leonia rinasce ogni giorno buttando via il passato, ma i suoi rifiuti la soffocano: simbolo della crisi ambientale moderna.</p>
+                        <a href="testo2.html" class="work-link">Approfondisci <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('https://www.ilriformista.it/wp-content/uploads/2022/09/il-lavoro-del-lettore.jpg');"></div>
+                    <div class="work-info">
+                        <h3>L'avventura del lettore</h3>
+                        <span class="year">1979</span>
+                        <p>Il lettore si prepara a vivere l’esperienza immersiva di *Se una notte d’inverno un viaggiatore*</p>
+                        <a href="testo3.html" class="work-link">Approfondisci <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('https://www.paolo-masiero.com/wp-content/uploads/2020/04/Lezioni_americane_V1-771x1024.jpg');"></div>
+                    <div class="work-info">
+                        <h3>Lezioni americane</h3>
+                        <span class="year">2001</span> 
+                        <p> *Lezioni americane* esplorano le sfide della modernità, tra cultura, tecnologia e nuove prospettive.</p>
+                        <a href="testo4.html" class="work-link">Approfondisci <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stile" class="section style-section">
+        <div class="container">
+            <h2 class="section-title">Stile Letterario</h2>
+            <div class="style-content">
+                <div class="style-features">
+                    <div class="feature">
+                        <i class="fas fa-feather-alt"></i>
+                        <h3>Neorealismo</h3>
+                        <p>Nei primi lavori, Calvino aderisce al neorealismo, descrivendo la Resistenza e il dopoguerra italiano con uno stile asciutto e diretto.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-magic"></i>
+                        <h3>Realismo magico</h3>
+                        <p>Nella trilogia "I nostri antenati" combina elementi fiabeschi con riflessioni filosofiche sulla condizione umana.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-chess"></i>
+                        <h3>Strutture complesse</h3>
+                        <p>Nelle opere mature sperimenta con strutture narrative innovative, come in "Se una notte d'inverno un viaggiatore".</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Allegoria</h3>
+                        <p>Le sue storie spesso nascondono significati allegorici e metaforici sulla società e l'esistenza umana.</p>
+                    </div>
+                </div>
+                <div class="style-quote">
+                    <blockquote>
+                        "La fantasia è un posto dove ci piove dentro."
+                        <footer>- Italo Calvino</footer>
+                    </blockquote>
+                    <img src="https://s.yimg.com/zb/imgv1/9916c284-32e4-3071-9edb-70a80bfc586f/t_500x300" alt="Italo Calvino scrivente">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galleria" class="section gallery-section">
+        <div class="container">
+            <h2 class="section-title">Galleria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://dimages2.gazzettaobjects.it/files/image_640_360/files/fp/uploads/2023/10/15/652bcf517cfde.r_d.1509-797-2133.jpeg" alt="Calvino nel 1984">
+                    <div class="gallery-caption">Calvino nel 1984</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.iwUzAXbT6rZq_3985nncxAHaDe&pid=Api&P=0&h=180" alt="Calvino giovane">
+                    <div class="gallery-caption">Calvino negli anni '50</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.koAEZMYpD4LhXlhFEIzWDQHaDp&pid=Api&P=0&h=180" alt="Calvino che scrive">
+                    <div class="gallery-caption">Al lavoro</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.repstatic.it/content/localirep/img/rep-torino/2023/02/18/120516187-0b0427a5-d0b3-42bc-a86c-41007d125563.jpg" alt="Calvino con editori Einaudi">
+                    <div class="gallery-caption">Con gli editori Einaudi</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/originals/c9/7d/aa/c97daaa695784289ff63d41261b12814.jpg" alt="Manoscritti di Calvino">
+                    <div class="gallery-caption">Pagina di manoscritto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.frammentirivista.it/wp-content/uploads/2023/09/Italo-Calvino-copertine-1536x864.jpg" alt="Copertine libri">
+                    <div class="gallery-caption">Le sue opere</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="citazioni" class="section quotes-section">
+        <div class="container">
+            <h2 class="section-title">Citazioni Celebri</h2>
+            <div class="quotes-slider">
+                <div class="quote active">
+                    <p>"Un classico è un libro che non ha mai finito di dire quel che ha da dire."</p>
+                    <span>- Perché leggere i classici</span>
+                </div>
+                <div class="quote">
+                    <p>"La lettura è solitudine. Si legge da soli anche quando si è in due."</p>
+                    <span>- Se una notte d'inverno un viaggiatore</span>
+                </div>
+                <div class="quote">
+                    <p>"Il desiderio è già memoria. Ciò che desideriamo è presente solo nel ricordo."</p>
+                    <span>- Palomar</span>
+                </div>
+                <div class="quote">
+                    <p>"Prendere la vita con leggerezza non è superficialità, ma planare sulle cose dall'alto, non avere macigni sul cuore."</p>
+                    <span>- Lezioni americane</span>
+                </div>
+                <div class="slider-controls">
+                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="opere" class="section works-section">
+        <div class="container">
+            <h2 class="section-title">Collegamenti esame</h2>
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('https://thumbs.dreamstime.com/b/lavagna-27313730.jpg');"></div>
+                    <div class="work-info">
+                        <h3>Calvino e la matematica</h3>
+                        <span class="year">ITA + MAT</span>
+                        <p>Il rapporto tra Calvino e la matematica</p>
+                        <a href="esame1.html" class="work-link">Approfondisci <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-image" style="background-image: url('https://tse2.mm.bing.net/th?id=OIP.uZsKcCuLwIXL8mEQVbJo2QHaE8&pid=Api&P=0&h=180');"></div>
+                    <div class="work-info">
+                        <h3>Calvino e l'informatica</h3>
+                        <span class="year">ITA + INFO</span>
+                        <p>il rapporto tra Calvino e l'informatica</p>
+                        <a href="esame2.html" class="work-link">Approfondisci <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Italo Calvino</h3>
+                    <p>Sito realizzato per un progetto scolastico sulla vita e le opere di Italo Calvino, uno dei più importanti scrittori italiani del Novecento.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Link utili</h3>
+                    <ul>
+                        <li><a href="https://it.wikipedia.org/wiki/Italo_Calvino" target="_blank">Wikipedia</a></li>
+                        <li><a href="https://www.italocalvino.org/" target="_blank">Fondazione Calvino</a></li>
+                        <li><a href="https://www.einaudi.it/autori/italo-calvino/" target="_blank">Editore Einaudi</a></li>
+                        <li><a href="https://www.treccani.it/enciclopedia/italo-calvino/" target="_blank">Treccani</a></li>
+                    </ul>
+                </div>
+                <div class="footer-credits">
+                    <h3>Crediti</h3>
+                    <p>Realizzato da Chiarilli e Farfarelli</p>
+                    <p>Classe 5BI</p>
+                    <p>Anno scolastico 2024/2025</p>
+                    <p>Fonti immagini: Wikipedia, Archivi Einaudi</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Spero che il sito ti sia piaciuto</p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script src="script.js"></script>
 </body>
 </html>

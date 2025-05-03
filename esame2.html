@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calvino: Crittografia e Programmazione a Oggetti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Tutti gli stili CSS precedenti rimangono invariati */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Raleway', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .article-header {
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .article-header h1 {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            line-height: 1.3;
+        }
+
+        .article-header .subtitle {
+            font-style: italic;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        .breadcrumb a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        .dialogue-container {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .dialogue-intro {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .lesson-section {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .lesson-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .dialogue-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .dialogue-header h2 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .dialogue-header p {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .dialogue-speaker {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .speaker-calvino {
+            justify-content: flex-start;
+        }
+
+        .speaker-it {
+            justify-content: flex-end;
+        }
+
+        .speaker-content {
+            max-width: 80%;
+        }
+
+        .speaker-calvino .speaker-content {
+            background: var(--light-color);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 8px;
+        }
+
+        .speaker-it .speaker-content {
+            background: #f0f7ff;
+            border-right: 4px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 8px 0 8px 8px;
+        }
+
+        .speaker-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .speaker-calvino .speaker-name {
+            color: var(--secondary-color);
+        }
+
+        .speaker-it .speaker-name {
+            color: var(--accent-color);
+        }
+
+        .speaker-name i {
+            margin-right: 10px;
+        }
+
+        .dialogue-text {
+            line-height: 1.8;
+        }
+
+        .dialogue-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 30px 0;
+            padding-left: 20px;
+            border-left: 3px solid #ddd;
+            font-style: italic;
+        }
+
+        .reflection-box {
+            background: #f8f5f2;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .reflection-box h3 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .it-concept {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .it-concept h4 {
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .it-concept h4 i {
+            margin-right: 10px;
+        }
+
+        .comparison-list {
+            margin: 20px 0;
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .comparison-list li {
+            background: white;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .comparison-list i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .comparison-text {
+            flex: 1;
+        }
+
+        .comparison-text strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .analysis-section {
+            background: var(--light-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .analysis-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .analysis-container h2 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .analysis-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .analysis-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .article-footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .article-footer h2 {
+            font-family: var(--font-title);
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .back-btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .article-header .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .dialogue-container {
+                padding: 30px 20px;
+            }
+            
+            .speaker-content {
+                max-width: 90%;
+            }
+            
+            .comparison-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .comparison-list i {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="article-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &raquo; <a href="opere.html">Opere</a> &raquo; <a href="temi.html">Temi</a> &raquo; <span>Calvino e OOP</span>
+            </div>
+            <h1>Calvino: Programmazione a Oggetti Letteraria</h1>
+            <p class="subtitle">Come le "Città invisibili" anticipano la programmazione modulare</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dialogue-container">
+            <div class="dialogue-intro">
+                <p>Italo Calvino sviluppò un approccio alla scrittura che, inconsapevolmente, anticipava i principi della programmazione a oggetti. Le sue opere, in particolare "Le città invisibili", mostrano una struttura che ricorda sorprendentemente i concetti fondamentali dell'OOP (Object-Oriented Programming).</p>
+            </div>
+
+            <!-- SEZIONE CRITTOGRAFIA PARTIGIANA -->
+            <div class="lesson-section">
+                <div class="dialogue-header">
+                    <h2>Crittografia Letteraria</h2>
+                    <p>Dai codici militari all'arte della narrazione</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-calvino">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-key"></i> Calvino sui Codici
+                        </div>
+                        <div class="dialogue-text">
+                            "Il 'Castello dei destini incrociati' nasce dall'idea che ogni storia possa essere raccontata attraverso combinazioni di simboli. Come nella Resistenza usavamo codici per comunicare messaggi vitali, nella letteratura i simboli diventano strumenti per trasmettere significati stratificati."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="it-concept">
+                    <h4><i class="fas fa-lock"></i> Strutture Cifrate</h4>
+                    <p>Le opere di Calvino utilizzano tecniche assimilabili alla crittografia:<br>
+                    - <strong>Livelli di lettura</strong>: significati accessibili a diversi gradi di interpretazione<br>
+                    - <strong>Combinatorie</strong>: elementi che assumono senso in base alla loro posizione<br>
+                    - <strong>Pattern ricorrenti</strong>: schemi che guidano il lettore attraverso il testo</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-it">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-user-secret"></i> L'Informatica risponde
+                        </div>
+                        <div class="dialogue-text">
+                            "Calvino anticipa concetti fondamentali dell'information design moderno. La sua opera dimostra come:<br>
+                            1. <strong>Struttura e contenuto</strong> siano inseparabili<br>
+                            2. La <strong>ridondanza</strong> possa essere strumento artistico<br>
+                            3. L'<strong>interattività</strong> nasca dall'interpretazione attiva<br>
+                            Ogni lettore diventa un decifratore di codici narrativi."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reflection-box">
+                    <h3>Letteratura come Sistema Sicuro</h3>
+                    <div class="dialogue-text">
+                        <p>L'approccio di Calvino trasforma la narrazione in un sistema complesso ma accessibile:</p>
+                        <ul class="comparison-list">
+                            <li>
+                                <i class="fas fa-puzzle-piece"></i>
+                                <div class="comparison-text">
+                                    <strong>Modularità</strong>
+                                    Unità narrative autonome che possono essere ricombinate
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-project-diagram"></i>
+                                <div class="comparison-text">
+                                    <strong>Reti di significato</strong>
+                                    Relazioni non lineari tra elementi del testo
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-eye"></i>
+                                <div class="comparison-text">
+                                    <strong>Piani di lettura</strong>
+                                    Strati interpretativi accessibili a diversi livelli
+                                </div>
+                            </li>
+                        </ul>
+                        <p>Questa architettura narrativa crea opere che resistono alla banalizzazione e si rivelano progressivamente al lettore attento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEZIONE PROGRAMMAZIONE A OGGETTI -->
+            <div class="lesson-section">
+                <div class="dialogue-header">
+                    <h2>Programmazione a Oggetti Letteraria</h2>
+                    <p>Le "Città invisibili" come sistema di classi e istanze</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-calvino">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-cubes"></i> Calvino sulla Composizione
+                        </div>
+                        <div class="dialogue-text">
+                            "Nelle 'Città invisibili' ho voluto creare descrizioni che fossero come mattoni indipendenti, ognuno con la sua completezza, ma che potessero combinarsi in infinite architetture. Ogni città è un mondo a sé, eppure dialoga con tutte le altre."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="it-concept">
+                    <h4><i class="fas fa-object-group"></i> OOP (Object-Oriented Programming)</h4>
+                    <p>La programmazione a oggetti si basa su:<br>
+                    - <strong>Classi</strong>: modelli astratti che definiscono proprietà e comportamenti<br>
+                    - <strong>Oggetti</strong>: istanze concrete delle classi<br>
+                    - <strong>Ereditarietà</strong>: capacità di condividere caratteristiche tra classi<br>
+                    - <strong>Incapsulamento</strong>: ogni oggetto è un'unità autonoma</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-it">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-code"></i> L'Informatica risponde
+                        </div>
+                        <div class="dialogue-text">
+                            "Le 'Città invisibili' applicano perfettamente i principi OOP:<br><br>
+                            1. <strong>Classe Città</strong>: modello astratto con proprietà comuni (nome, descrizione, caratteristiche)<br>
+                            2. <strong>Oggetti Città</strong>: ogni città è un'istanza unica (Despina, Isidora, Zaira)<br>
+                            3. <strong>Ereditarietà</strong>: le città condividono tratti delle categorie (città e memoria, città e desiderio)<br>
+                            4. <strong>Polimorfismo</strong>: stessa struttura ma comportamenti diversi<br><br>
+                            Calvino ha creato un perfetto sistema a oggetti ante litteram."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reflection-box">
+                    <h3>Design Pattern Narrativo</h3>
+                    <div class="dialogue-text">
+                        <p>L'architettura delle "Città invisibili" corrisponde a pattern software moderni:</p>
+                        <ul class="comparison-list">
+                            <li>
+                                <i class="fas fa-shapes"></i>
+                                <div class="comparison-text">
+                                    <strong>Factory Method</strong>
+                                    Creazione di città con caratteristiche diverse ma interfaccia comune
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-network-wired"></i>
+                                <div class="comparison-text">
+                                    <strong>Composite</strong>
+                                    Struttura ad albero delle categorie di città
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-exchange-alt"></i>
+                                <div class="comparison-text">
+                                    <strong>Strategy</strong>
+                                    Comportamenti diversi per città simili
+                                </div>
+                            </li>
+                        </ul>
+                        <p>Questa struttura spiega perché il libro sia così adattabile a diverse interpretazioni, come un software ben progettato a diverse implementazioni.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sezione analisi -->
+    <section class="analysis-section">
+        <div class="analysis-container">
+            <h2>Calvino e l'Architettura del Testo</h2>
+            <div class="analysis-content">
+                <p>L'approccio di Calvino alla costruzione letteraria anticipa principi fondamentali dell'ingegneria del software:</p>
+                
+                <div class="it-concept" style="margin: 20px 0;">
+                    <h4><i class="fas fa-cube"></i> Modularità</h4>
+                    <p>Unità narrative autonome che possono essere riutilizzate e ricombinate</p>
+                </div>
+                
+                <div class="it-concept" style="margin: 20px 0;">
+                    <h4><i class="fas fa-project-diagram"></i> Relazioni non gerarchiche</h4>
+                    <p>Connessioni multiple tra elementi anziché strutture rigide</p>
+                </div>
+                
+                <div class="it-concept" style="margin: 20px 0;">
+                    <h4><i class="fas fa-random"></i> Polimorfismo narrativo</h4>
+                    <p>Stesse strutture formali che producono significati diversi</p>
+                </div>
+                
+                <p>In un'era dominata dalla complessità informatica, il metodo compositivo di Calvino offre paradigmi ancora attuali per gestire sistemi complessi attraverso strutture chiare e flessibili.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+        <div class="container">
+            <h2>Approfondisci le opere di Calvino</h2>
+            <a href="index.html" class="back-btn">Torna alla pagina principale</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'avventura del Lettore - Se una notte d'inverno un viaggiatore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Stili ereditati dalla pagina principale */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Raleway', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        .article-header {
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1587135991058-8816a1a7e7ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .article-header h1 {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            line-height: 1.3;
+        }
+
+        .article-header .subtitle {
+            font-style: italic;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        .breadcrumb a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Contenuto articolo */
+        .dialogue-container {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .dialogue-intro {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .dialogue-scene {
+            margin-bottom: 60px;
+        }
+
+        .dialogue-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .dialogue-header h2 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .dialogue-header p {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .dialogue-speaker {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .speaker-reader {
+            justify-content: flex-start;
+        }
+
+        .speaker-author {
+            justify-content: flex-end;
+        }
+
+        .speaker-content {
+            max-width: 80%;
+        }
+
+        .speaker-reader .speaker-content {
+            background: var(--light-color);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 8px;
+        }
+
+        .speaker-author .speaker-content {
+            background: #f0f7ff;
+            border-right: 4px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 8px 0 8px 8px;
+        }
+
+        .speaker-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .speaker-reader .speaker-name {
+            color: var(--secondary-color);
+        }
+
+        .speaker-author .speaker-name {
+            color: var(--accent-color);
+        }
+
+        .speaker-name i {
+            margin-right: 10px;
+        }
+
+        .dialogue-text {
+            line-height: 1.8;
+        }
+
+        .dialogue-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 30px 0;
+            padding-left: 20px;
+            border-left: 3px solid #ddd;
+            font-style: italic;
+        }
+
+        /* Sezione analisi */
+        .analysis-section {
+            background: var(--light-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .analysis-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .analysis-container h2 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .analysis-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .analysis-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .article-footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .article-footer h2 {
+            font-family: var(--font-title);
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .back-btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .article-header .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .dialogue-container {
+                padding: 30px 20px;
+            }
+            
+            .speaker-content {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header articolo -->
+    <header class="article-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &raquo; <a href="opere.html">Opere</a> &raquo; <a href="se-una-notte.html">Se una notte d'inverno un viaggiatore</a> &raquo; <span>L'avventura del Lettore</span>
+            </div>
+            <h1>L'avventura del Lettore</h1>
+            <p class="subtitle">"Sto per finire Se una notte d'inverno un viaggiatore" - Il dialogo tra Autore e Lettore</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dialogue-container">
+            <div class="dialogue-intro">
+                <p>La struttura narrativa de "Se una notte d'inverno un viaggiatore" (1979) è quella del dialogo immaginario tra Autore e Lettore. In questo modo, Calvino fa diventare il lettore oggetto del romanzo. Questo approccio al mondo della lettura, l'atto di leggere stesso diventa protagonista.</p>
+            </div>
+
+            <div class="dialogue-scene">
+                <div class="dialogue-header">
+                    <h2>L'incipit</h2>
+                    <p>Preparazione alla lettura</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-author">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-pen-fancy"></i> L'Autore
+                        </div>
+                        <div class="dialogue-text">
+                            "Stai per cominciare a leggere il nuovo romanzo <em>Se una notte d'inverno un viaggiatore</em> di Italo Calvino. Rilassati. Raccogliti. Allontana da te ogni altro pensiero. Lascia che il mondo che ti circonda sfumi nell'indistinto. La porta è meglio chiuderla; di là c'è sempre la televisione accesa."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-speaker speaker-reader">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-book-reader"></i> Il Lettore
+                        </div>
+                        <div class="dialogue-text">
+                            "Dillo subito, agli altri: «No, non voglio vedere la televisione!» Alza la voce, se non ti sentono: «Sto leggendo! Non voglio essere disturbato!» Forse non ti hanno sentito, con tutto quel chiasso, dillo più forte, grida: «Sto cominciando a leggere il nuovo romanzo di Italo Calvino!»"
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-note">
+                    L'Autore guida il Lettore nella preparazione alla lettura, in un dialogo metanarrativo che rompe la quarta parete e coinvolge direttamente chi legge.
+                </div>
+
+                <div class="dialogue-speaker speaker-author">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-pen-fancy"></i> L'Autore
+                        </div>
+                        <div class="dialogue-text">
+                            "Prendi la posizione più comoda: seduto, sdraiato, raggomitolato, coricato. Coricato sulla schiena, su un fianco, sulla pancia. In poltrona, sul divano, sulla sedia a dondolo, sulla sedia a sdraio, sul pouf. Sull'amaca, se hai un'amaca. Sul letto, naturalmente, o dentro il letto. Puoi anche metterti a testa in giù, in posizione yoga. Col libro capovolto, si capisce."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-speaker speaker-reader">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-book-reader"></i> Il Lettore
+                        </div>
+                        <div class="dialogue-text">
+                            "Certo, la posizione ideale per leggere non si riesce a trovarla. Una volta si leggeva in piedi, di fronte a un leggio. Si era abituati a stare fermi in piedi. Ci si riposava così quando si era stanchi d'andare a cavallo."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-note">
+                    Il testo gioca con le infinite possibilità di approccio alla lettura, rendendo il Lettore consapevole del suo ruolo attivo nel processo narrativo.
+                </div>
+
+                <div class="dialogue-speaker speaker-author">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-pen-fancy"></i> L'Autore
+                        </div>
+                        <div class="dialogue-text">
+                            "Regola la luce in modo che non ti stanchi la vista. Fallo adesso, perché appena sarai sprofondato nella lettura non ci sarà più verso di smuoverti. Fa' in modo che la pagina non resti in ombra, un addensarsi di lettere nere su sfondo grigio, uniformi come un branco di topi; ma sta' attento che non le batta addosso una luce troppo forte."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dialogue-speaker speaker-reader">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-book-reader"></i> Il Lettore
+                        </div>
+                        <div class="dialogue-text">
+                            "Non che t'aspetti qualcosa di particolare da questo libro in particolare. Sei uno che per principio non s'aspetta più niente da niente. Ci sono tanti, più giovani di te o meno giovani, che vivono in attesa d'esperienze straordinarie; dai libri, dalle persone, dai viaggi, dagli avvenimenti, da quello che il domani tiene in serbo. Tu no."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sezione analisi -->
+    <section class="analysis-section">
+        <div class="analysis-container">
+            <h2>Significato del dialogo</h2>
+            <div class="analysis-content">
+                <p>Questo dialogo rappresenta il cuore innovativo del romanzo, dove Calvino rivoluziona il rapporto tra autore, testo e lettore. La struttura a incastro del romanzo, con i suoi dieci inizi di storie diverse, viene anticipata e giustificata da questo dialogo metanarrativo.</p>
+                
+                <p>Calvino, attraverso la voce dell'Autore, non solo guida il Lettore nell'atto della lettura, ma lo rende protagonista attivo della narrazione. Il Lettore non è più un semplice destinatario passivo, ma un co-creatore del significato del testo.</p>
+                
+                <p>La genialità di Calvino sta nel trasformare l'esperienza della lettura in un'avventura condivisa, in cui Autore e Lettore diventano personaggi di una storia che esiste solo nella misura in cui viene letta e vissuta. Questo approccio anticipa molte delle riflessioni contemporanee sulla natura interattiva della narrazione.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+        <div class="container">
+            <h2>Torna alla home</h2>
+            <a href="index.html" class="back-btn">home</a>
+        </div>
+    </footer>
+</body>
+</html>

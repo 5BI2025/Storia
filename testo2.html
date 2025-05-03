@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonia - Le città invisibili | Italo Calvino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Stili base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Raleway', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.8;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        .article-header {
+            height: 70vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1587135991058-8816a1a7e7ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .article-header h1 {
+            font-family: var(--font-title);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .article-header .subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-style: italic;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        .breadcrumb a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Contenuto principale */
+        .article-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 992px) {
+            .article-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .main-content {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .main-content p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .main-content blockquote {
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 25px;
+            margin: 40px 0;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 1.3rem;
+        }
+
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 40px auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-box {
+            background: var(--light-color);
+            border-left: 4px solid var(--secondary-color);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 20px;
+            align-self: start;
+        }
+
+        .sidebar-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .sidebar-card h3 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--light-color);
+            padding-bottom: 10px;
+        }
+
+        /* Sezione analisi */
+        .analysis-section {
+            background: var(--light-color);
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+
+        .analysis-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .analysis-container h2 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .analysis-content {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .analysis-content p {
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .article-footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .article-footer h2 {
+            font-family: var(--font-title);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .back-btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .article-header .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .main-content {
+                padding: 30px;
+            }
+            
+            .analysis-container h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="article-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &raquo; <a href="opere.html">Opere</a> &raquo; <a href="citta-invisibili.html">Le città invisibili</a> &raquo; <span>Leonia</span>
+            </div>
+            <h1>Leonia</h1>
+            <p class="subtitle">La città che rifà se stessa tutti i giorni e la montagna di rifiuti che la sommerge</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="article-content">
+            <!-- Contenuto principale -->
+            <article class="main-content">
+                <p>La descrizione di Leonia, che appartiene alle <em>Città continue</em>, mostra la convinzione di Calvino che vedeva nella crisi della città la "crisi della natura" (inquinamento dell'aria, dell'acqua, del suolo), una delle questioni fondamentali della nostra epoca.</p>
+
+                <blockquote>
+                    "La città di Leonia rifà se stessa tutti i giorni: ogni mattina la popolazione si risveglia tra lenzuola fresche, si lava con saponette appena sgusciate dall'involucro, indossa vestaglie nuove fiammanti, estrae dal più perfezionato frigorifero barattoli di latta ancora intonsi, ascoltando le ultime filastrocche dall'ultimo modello d'apparecchio."
+                </blockquote>
+
+                <img src="https://livesicilia.it/wp-content/uploads/2014/01/rifiuti-immondizia-palermo.jpg" alt="Rifiuti urbani accumulati">
+
+                <p>Sui marciapiedi, avviluppati in tersi sacchi di plastica, i resti della Leonia d'ieri aspettano il carro dello spazzaturaio. Non solo tubi di dentifricio schiacciati, lampadine fulminate, giornali, contenitori, materiali d'imballaggio, ma anche scaldabagni, enciclopedie, pianoforti, servizi di porcellana: più che dalle cose che ogni giorno vengono fabbricate vendute comprate, l'opulenza di Leonia si misura dalle cose che ogni giorno vengono buttate via per far posto alle nuove.</p>
+
+                <div class="highlight-box">
+                    <p>"Tanto che ci si chiede se la vera passione di Leonia sia davvero come dicono il godere delle cose nuove e diverse, o non piuttosto l'espellere, l'allontanare da sé, il mondarsi d'una ricorrente impurità."</p>
+                </div>
+
+                <p>Certo è che gli spazzaturai sono accolti come angeli, e il loro compito di rimuovere i resti dell'esistenza di ieri è circondato d'un rispetto silenzioso, come un rito che ispira devozione, o forse solo perché una volta buttata via la roba nessuno vuole più averci da pensare.</p>
+
+                <p>Dove portino ogni giorno il loro carico gli spazzaturai nessuno se lo chiede: fuori della città, certo, ma ogni anno la città s'espande, e gli immondezzai devono arretrare più lontano; l'imponenza del gettito aumenta e le cataste s'innalzano, si stratificano, si dispiegano su un perimetro più vasto. Aggiungi che più l'arte di Leonia eccelle nel fabbricare nuovi materiali, più la spazzatura migliora la sua sostanza, resiste al tempo, alle intemperie, a fermentazioni e combustioni. È una fortezza di rimasugli indistruttibili che circonda Leonia, la sovrasta da ogni lato come un accorcoro di montagne.</p>
+
+                <p>Il risultato è questo: che più Leonia espelle roba più ne accumula; le squame del suo passato si saldano in una corazza che non si può togliere; rinnovandosi ogni giorno la città conserva tutta se stessa nella sola forma definitiva: quella delle spazzature d'ieri che s'ammucchiano sulle spazzature dell'altro ieri e di tutti i suoi giorni e anni e lustri.</p>
+
+                <p>Il pattume di Leonia a poco a poco invaderebbe il mondo, se sullo sterminato immondezzaio non stessero premendo, al di là dell'estremo crinale, immondezzai d'altre città, che anch'esse respingono lontano da sé montagne di rifiuti. Forse il mondo intero, oltre i confini di Leonia, è ricoperto da crateri di spazzatura, ognuno con al centro una metropoli in eruzione ininterrotta. I confini tra le città estranee e nemiche sono bastioni infetti in cui i detriti dell'una e dell'altra si puntellano a vicenda, si sovrastano, si mescolano.</p>
+
+                <p>Più ne cresce l'altezza, più incombe il pericolo delle frane: basta che un barattolo, un vecchio pneumatico, un fiasco spagliato rotoli dalla parte di Leonia e una valanga di scarpe spaiate, calendari d'anni trascorsi, fiori secchi sommergerà la città nel proprio passato che invano tentava di respingere, mescolato con quello delle città limitrofe, finalmente monde: un cataclisma spianerà la sordida catena montuosa, cancellerà ogni traccia della metropoli sempre vestita a nuovo. Già dalle città vicine sono pronti coi rulli compressori per spianare il suolo, estendersi nel nuovo territorio, ingrandire se stesse, allontanare i nuovi immondezzai.</p>
+            </article>
+
+            <!-- Sidebar semplificata -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3>Informazioni</h3>
+                    <p><strong>Opera:</strong> Le città invisibili</p>
+                    <p><strong>Autore:</strong> Italo Calvino</p>
+                    <p><strong>Anno:</strong> 1972</p>
+                    <p><strong>Tipo di città:</strong> Città continue</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Sezione analisi -->
+    <section class="analysis-section">
+        <div class="analysis-container">
+            <h2>Analisi: Leonia come metafora della società dei consumi</h2>
+            <div class="analysis-content">
+                <p>La città di Leonia rappresenta una delle più potenti metafore calviniane della società dei consumi e della civiltà dello spreco. Scritta negli anni '70, questa città anticipa con straordinaria lucidità molti dei problemi ecologici che oggi affrontiamo globalmente.</p>
+                
+                <p>Calvino coglie l'essenza paradossale del consumismo: più la città produce e consuma, più genera rifiuti indistruttibili che finiscono per soffocarla. La "rinascita quotidiana" di Leonia è in realtà un circolo vizioso che la allontana dalla natura e dalla sua stessa storia, seppellendola sotto il peso del suo passato materiale.</p>
+                
+                <p>Il testo contiene anche una sottile critica alla nostra relazione con gli oggetti: gli abitanti di Leonia venerano gli spazzaturai come angeli, perché li liberano dal peso della memoria materiale, permettendo loro di continuare il ciclo infinito di consumo e rifiuto senza conseguenze apparenti.</p>
+                
+                <p>La visione finale, con il mondo intero coperto da montagne di rifiuti che si sostengono a vicenda, è un'immagine apocalittica che riflette la preoccupazione di Calvino per la sostenibilità del modello di sviluppo occidentale, tema quanto mai attuale nell'era della crisi climatica e dell'inquinamento globale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+        <div class="container">
+            <h2>Torna alla home</h2>
+            <a href="index.html" class="back-btn">home</a>
+        </div>
+    </footer>
+</body>
+</html>

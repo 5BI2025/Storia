@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calvino e la Matematica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Raleway', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .article-header {
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .article-header h1 {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            line-height: 1.3;
+        }
+
+        .article-header .subtitle {
+            font-style: italic;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .breadcrumb {
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        .breadcrumb a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        .dialogue-container {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .dialogue-intro {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .lesson-section {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .lesson-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .dialogue-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .dialogue-header h2 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .dialogue-header p {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .dialogue-speaker {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .speaker-calvino {
+            justify-content: flex-start;
+        }
+
+        .speaker-math {
+            justify-content: flex-end;
+        }
+
+        .speaker-content {
+            max-width: 80%;
+        }
+
+        .speaker-calvino .speaker-content {
+            background: var(--light-color);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 8px;
+        }
+
+        .speaker-math .speaker-content {
+            background: #f0f7ff;
+            border-right: 4px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 8px 0 8px 8px;
+        }
+
+        .speaker-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .speaker-calvino .speaker-name {
+            color: var(--secondary-color);
+        }
+
+        .speaker-math .speaker-name {
+            color: var(--accent-color);
+        }
+
+        .speaker-name i {
+            margin-right: 10px;
+        }
+
+        .dialogue-text {
+            line-height: 1.8;
+        }
+
+        .dialogue-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 30px 0;
+            padding-left: 20px;
+            border-left: 3px solid #ddd;
+            font-style: italic;
+        }
+
+        .reflection-box {
+            background: #f8f5f2;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .reflection-box h3 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .math-concept {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .math-concept h4 {
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .math-concept h4 i {
+            margin-right: 10px;
+        }
+
+        .analysis-section {
+            background: var(--light-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+
+        .analysis-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .analysis-container h2 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .analysis-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .analysis-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .article-footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .article-footer h2 {
+            font-family: var(--font-title);
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .back-btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .article-header .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .dialogue-container {
+                padding: 30px 20px;
+            }
+            
+            .speaker-content {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="article-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &raquo; <a href="opere.html">Opere</a> &raquo; <a href="temi.html">Temi</a> &raquo; <span>Calvino e la Matematica</span>
+            </div>
+            <h1>Calvino e la Matematica</h1>
+            <p class="subtitle">Come i concetti matematici influenzarono la letteratura di Italo Calvino</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dialogue-container">
+            <div class="dialogue-intro">
+                <p>Italo Calvino, uno dei più importanti scrittori italiani del Novecento, ebbe un rapporto speciale con la matematica. Figlio di due botanici, sviluppò fin da giovane una mentalità scientifica che si riflette nelle sue opere. Esploriamo i principali concetti matematici che troviamo nei suoi libri, spiegati in modo semplice e accessibile.</p>
+            </div>
+
+            <!-- SEZIONE COMBINATORIA -->
+            <div class="lesson-section">
+                <div class="dialogue-header">
+                    <h2>Combinatoria</h2>
+                    <p>L'arte di combinare elementi in modi diversi</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-calvino">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-square-root-alt"></i> Calvino sulla Combinatoria
+                        </div>
+                        <div class="dialogue-text">
+                            "Nel 'Castello dei destini incrociati' ho usato i tarocchi come un sistema combinatorio: le storie nascono dalle diverse combinazioni delle carte. È come in matematica: partendo da pochi elementi di base, puoi creare infinite storie diverse. Mi affascina questa idea che da regole precise possano nascere infinite variazioni."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="math-concept">
+                    <h4><i class="fas fa-cubes"></i> Cos'è la Combinatoria?</h4>
+                    <p>La combinatoria è la branca della matematica che studia i modi in cui gli oggetti possono essere combinati o disposti. Per esempio, con 3 carte (A, B, C) puoi fare 6 combinazioni diverse: ABC, ACB, BAC, BCA, CAB, CBA. Più elementi ci sono, più combinazioni possibili esistono.</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-math">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-infinity"></i> La Matematica spiega
+                        </div>
+                        <div class="dialogue-text">
+                            "Calvino usa la combinatoria come strumento narrativo. Nel 'Castello dei destini incrociati', le 78 carte dei tarocchi possono generare un numero enorme di storie diverse (78! cioè 78 fattoriale, un numero con 116 cifre!). Calvino ne sceglie alcune per mostrare come da uno stesso insieme possano nascere racconti completamente diversi."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reflection-box">
+                    <h3>Perché è importante?</h3>
+                    <div class="dialogue-text">
+                        <p>La combinatoria mostra come da elementi limitati possano nascere infinite possibilità. Calvino usa questo concetto per esplorare:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Come piccoli cambiamenti possono creare storie completamente diverse</li>
+                            <li>Come il caso e le scelte si intrecciano nella vita</li>
+                            <li>Come la letteratura può giocare con le possibilità</li>
+                        </ul>
+                        <p>È un modo per mostrare che la creatività spesso lavora con elementi noti, combinandoli in modi nuovi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEZIONE GEOMETRIE -->
+            <div class="lesson-section">
+                <div class="dialogue-header">
+                    <h2>Geometrie Narrative</h2>
+                    <p>Forme matematiche nelle strutture dei libri</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-calvino">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-shapes"></i> Calvino sulle Geometrie
+                        </div>
+                        <div class="dialogue-text">
+                            "Le 'Città invisibili' hanno una struttura geometrica precisa: 11 categorie di città, 5 città per categoria, con Marco Polo che ne descrive 55 in totale. È come un cristallo con molte facce: ogni città riflette un aspetto diverso dell'idea di città. La matematica mi ha insegnato che la bellezza sta anche nelle forme pure, nelle simmetrie, nelle strutture perfette."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="math-concept">
+                    <h4><i class="fas fa-project-diagram"></i> Strutture Geometriche in Letteratura</h4>
+                    <p>La geometria studia le forme e le loro proprietà. Calvino usa strutture geometriche per organizzare i suoi libri:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Simmetria</strong>: parti che si corrispondono (come in uno specchio)</li>
+                        <li><strong>Serie</strong>: elementi che seguono uno schema ripetuto</li>
+                        <li><strong>Strutture cristalline</strong>: forme con facce regolari</li>
+                    </ul>
+                </div>
+
+                <div class="dialogue-speaker speaker-math">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-vector-square"></i> La Matematica spiega
+                        </div>
+                        <div class="dialogue-text">
+                            "Nelle 'Città invisibili' troviamo una struttura matematica precisa: 11 categorie (come 'Le città e la memoria', 'Le città e il desiderio') con 5 città ciascuna, per un totale di 55 descrizioni. Il numero 55 non è casuale: è un numero triangolare (1+2+3+...+10) e appare nella successione di Fibonacci. Calvino costruisce il libro come una figura geometrica perfetta."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reflection-box">
+                    <h3>Perché è importante?</h3>
+                    <div class="dialogue-text">
+                        <p>Le geometrie narrative mostrano come:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>La struttura di un libro può essere parte del suo significato</li>
+                            <li>La matematica può dare ordine alla fantasia</li>
+                            <li>Forme astratte possono rappresentare idee complesse</li>
+                        </ul>
+                        <p>Calvino dimostra che la letteratura può essere precisa come la matematica, ma ugualmente ricca di significato.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEZIONE ALGORITMI -->
+            <div class="lesson-section">
+                <div class="dialogue-header">
+                    <h2>Algoritmi Narrativi</h2>
+                    <p>Istruzioni per creare storie</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-calvino">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-laptop-code"></i> Calvino sugli Algoritmi
+                        </div>
+                        <div class="dialogue-text">
+                            "Mi interessava l'idea che una storia potesse generarsi da sola, seguendo delle regole precise, come un computer che esegue un programma. In 'Se una notte d'inverno un viaggiatore', il libro segue uno schema preciso: inizi a leggere un libro, qualcosa interrompe la lettura, cerchi di recuperare il libro, e così via. È un algoritmo narrativo."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="math-concept">
+                    <h4><i class="fas fa-code"></i> Cosa sono gli Algoritmi?</h4>
+                    <p>Un algoritmo è una serie di passaggi precisi per risolvere un problema o completare un compito. Per esempio, una ricetta di cucina è un algoritmo. In informatica, gli algoritmi sono istruzioni che i computer seguono per svolgere compiti.</p>
+                </div>
+
+                <div class="dialogue-speaker speaker-math">
+                    <div class="speaker-content">
+                        <div class="speaker-name">
+                            <i class="fas fa-robot"></i> La Matematica spiega
+                        </div>
+                        <div class="dialogue-text">
+                            "Calvino anticipa la narrativa generata al computer. 'Se una notte d'inverno un viaggiatore' segue uno schema ricorsivo (un algoritmo che si ripete): 1) Inizio a leggere un libro, 2) La lettura si interrompe, 3) Cerco il libro completo, 4) Trovo un libro diverso, e si ricomincia. È come un programma che genera storie infinite."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reflection-box">
+                    <h3>Perché è importante?</h3>
+                    <div class="dialogue-text">
+                        <p>Gli algoritmi narrativi ci fanno riflettere su:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Come funzionano le storie che leggiamo</li>
+                            <li>Il rapporto tra creatività e regole</li>
+                            <li>Come la tecnologia influenza la letteratura</li>
+                        </ul>
+                        <p>Calvino mostra che anche le storie più creative seguono spesso schemi riconoscibili, come dimostrano oggi gli algoritmi dei social media che ci propongono storie simili a quelle che già ci piacciono.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sezione analisi -->
+    <section class="analysis-section">
+        <div class="analysis-container">
+            <h2>Perché Calvino usava la matematica nella letteratura?</h2>
+            <div class="analysis-content">
+                <p>Calvino vedeva nella matematica non un insieme di numeri freddi, ma un linguaggio per descrivere la complessità del mondo. Ecco i motivi principali del suo amore per la matematica:</p>
+                
+                <div class="math-concept" style="margin: 20px 0;">
+                    <h4><i class="fas fa-lightbulb"></i> 1. Ordine nel caos</h4>
+                    <p>La matematica offre strumenti per trovare schemi nella complessità, proprio come la letteratura cerca significato nell'esperienza umana.</p>
+                </div>
+                
+                <div class="math-concept" style="margin: 20px 0;">
+                    <h4><i class="fas fa-game-board"></i> 2. Gioco creativo</h4>
+                    <p>Le strutture matematiche erano per Calvino come regole di un gioco: limitazioni che stimolano la creatività invece di soffocarla.</p>
+                </div>
+                
+                <div class="math-concept" style="margin: 20px 0;">
+                    <h4><i class="fas fa-eye"></i> 3. Precisione nell'osservazione</h4>
+                    <p>Come uno scienziato, Calvino voleva descrivere il mondo con esattezza, e la matematica era il modello di questa precisione.</p>
+                </div>
+                
+                <div class="math-concept" style="margin: 20px 0;">
+                    <h4><i class="fas fa-infinity"></i> 4. Infinite possibilità</h4>
+                    <p>La combinatoria mostra come da pochi elementi possano nascere infinite variazioni, proprio come poche lettere formano infinite parole.</p>
+                </div>
+                
+                <p>Calvino dimostra che matematica e letteratura non sono mondi separati, ma due modi complementari di esplorare la realtà. La sua eredità ci invita a vedere la bellezza della precisione matematica anche nella creatività letteraria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+        <div class="container">
+            <h2>Approfondisci l'opera di Calvino</h2>
+            <a href="index.html" class="back-btn">Torna alla pagina principale</a>
+        </div>
+    </footer>
+</body>
+</html>
